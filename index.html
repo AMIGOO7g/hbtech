@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#090a0b" />
+    <title>HBTECH — проекты и строительство домов</title>
+    <meta
+      name="description"
+      content="Готовые проекты, индивидуальная архитектура, адаптация и строительство загородных домов."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="HBTECH — готовые проекты и строительство домов" />
+    <meta property="og:description" content="12 готовых проектов, строительство под ключ с фиксированной ценой, гарантия 5 лет." />
+    <meta property="og:image" content="assets/og-cover.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="assets/hbtech-logo.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-nav" id="siteNav">
+      <button
+        class="nav-brand"
+        type="button"
+        data-view="home"
+        aria-label="HBTECH — на главную"
+      >
+        <img src="assets/hbtech-logo.svg" alt="" />
+      </button>
+      <nav class="nav-links" aria-label="Основная навигация">
+        <button type="button" data-view="projects">Проекты</button
+        ><button type="button" data-view="process">Строительство</button
+        ><button type="button" data-view="architecture">Индивидуальный дом</button
+        ><button type="button" data-view="experience">О компании</button>
+      </nav>
+      <a class="nav-phone" id="navPhone" href="#"></a><button class="nav-cta" type="button" data-lead="project">
+        Получить проект</button
+      ><button
+        class="menu-toggle"
+        type="button"
+        aria-label="Открыть меню"
+        aria-expanded="false"
+      >
+        <span></span><span></span>
+      </button>
+    </header>
+    <aside class="menu-drawer" aria-hidden="true">
+      <div class="drawer-brand">HBTECH</div>
+      <nav aria-label="Мобильная навигация">
+        <button type="button" data-view="projects"><b>01</b>Проекты</button
+        ><button type="button" data-view="process"><b>02</b>Строительство</button
+        ><button type="button" data-view="architecture"><b>03</b>Индивидуальный дом</button
+        ><button type="button" data-view="experience"><b>04</b>О компании</button>
+      </nav>
+      <button class="primary" type="button" data-lead="project">
+        Получить проект
+      </button>
+    </aside>
+    <main>
+      <section
+        class="view home-view active intro"
+        data-view-panel="home"
+        aria-label="Главная"
+      >
+        <div class="home-ambient" aria-hidden="true"></div>
+        <div class="home-splash" aria-hidden="true"><img src="assets/hbtech-logo.svg" alt="" /><b>HBTECH</b><span>ПРОЕКТЫ И СТРОИТЕЛЬСТВО ДОМОВ</span></div>
+        <div class="home-grid" id="homeGrid">
+          <button class="home-card card-about" type="button" data-home-card data-view="experience" data-kicker="" data-title="" data-copy=""><span class="card-no">О КОМПАНИИ</span><span class="card-spec">с 2021 года · Москва и область</span><span class="card-copy"><strong>HBTECH — дома под ключ</strong><small>5 лет · 120 построенных домов · гарантия 5 лет</small><span class="card-more"><span><span class="card-desc">Проект, смета, стройка и сервис одной командой</span></span></span></span><i>↗︎</i></button>
+          <button class="home-card card-projects" type="button" data-home-card data-view="projects" data-kicker="" data-title="" data-copy=""><b class="card-big" id="cardBig" aria-hidden="true">12</b><span class="card-no">01 · ПРОЕКТЫ ДОМОВ</span><span class="card-spec">12 проектов · 98–296 м²</span><span class="card-copy"><strong>Готовых<br />проектов</strong><small>от 39 000 ₽ за проект</small><span class="card-more"><span><span class="card-desc">Планы, фасады и цена каждого дома</span></span></span></span><i>↗︎</i></button>
+          <button class="home-card card-process" type="button" data-home-card data-view="process" data-kicker="" data-title="" data-copy=""><span class="card-no">02 · СТРОИТЕЛЬСТВО</span><span class="card-spec">8 этапов · цена в договоре</span><span class="card-copy"><strong>Строительство<br />дома</strong><small>под ключ от 3,2 млн ₽</small><span class="card-more"><span><span class="card-desc">8 этапов, цена фиксируется в договоре</span></span></span></span><i>↗︎</i></button>
+          <button class="home-card card-architecture" type="button" data-home-card data-view="architecture" data-kicker="" data-title="" data-copy=""><span class="card-no">03 · ПРОЕКТИРОВАНИЕ</span><span class="card-spec">эскиз 0 ₽ · 2–4 недели</span><span class="card-copy"><strong>Дом<br />на заказ</strong><small>эскиз — бесплатно</small><span class="card-more"><span><span class="card-desc">Дом под ваш участок, семью и бюджет</span></span></span></span><i>↗︎</i></button>
+          <button class="home-card card-calc" type="button" data-home-card data-view="calc" data-kicker="" data-title="" data-copy=""><span class="card-no">04 · КАЛЬКУЛЯТОР</span><span class="card-spec">площадь · этажи · материал</span><span class="card-copy"><strong>Рассчитать<br />стоимость</strong><small>вилка цены за 1 минуту</small><span class="card-more"><span><span class="card-desc">Вилка цены за минуту и точная смета</span></span></span></span><i>↗︎</i></button>
+          <div class="home-center"><div class="center-brand"></div><div class="center-message"><small id="centerKicker"></small><strong id="centerTitle"></strong><p id="centerCopy"></p></div></div>
+        </div>
+        <p class="home-caption">HBTECH — готовые проекты и строительство частных домов в Москве и области</p>
+      </section>
+
+      <section class="view dark-view" data-view-panel="projects">
+        <section class="hero projects-hero">
+          <div class="hero-copy reveal">
+            <span class="eyebrow">ГОТОВЫЕ ПРОЕКТЫ HBTECH</span>
+            <h1>Выбрать<br /><span class="spectrum">готовый дом.</span></h1>
+            <p>
+              Выберите архитектуру, сравните параметры и откройте полноценную
+              страницу проекта.
+            </p>
+          </div>
+          <div class="hero-stat reveal">
+            <b data-count="5">0</b
+            ><span>готовых проектов<br />для разных сценариев жизни</span>
+          </div>
+
+        </section>
+        <section class="project-catalog section-dark-soft">
+          <header class="section-heading reveal">
+            <span>КАТАЛОГ</span>
+            <h2>
+              Дома для разных<br /><span class="spectrum"
+                >сценариев жизни.</span
+              >
+            </h2>
+            <p>
+              У каждого проекта есть галерея, планы, состав документации и
+              варианты реализации.
+            </p>
+          </header>
+          <div class="catalog-bar">
+            <div class="capsule" data-filter="task"><i class="capsule-pill" aria-hidden="true"></i><button type="button" data-v="all" class="on">Все дома</button><button type="button" data-v="family">Для семьи</button><button type="button" data-v="couple">Для двоих</button><button type="button" data-v="onefloor">Одноэтажные</button><button type="button" data-v="garden">С садом</button></div>
+            <button type="button" class="filters-toggle" id="filtersToggle" aria-expanded="false">Фильтры<span id="filtersCount"></span></button>
+          </div>
+          <div class="filters-panel" id="filtersPanel"><div>
+            <div class="filters-inner">
+              <div class="seg" data-filter="area"><button type="button" data-v="all" class="on">Любая площадь</button><button type="button" data-v="s">до 150 м²</button><button type="button" data-v="m">150–220 м²</button><button type="button" data-v="l">от 220 м²</button></div>
+              <div class="seg" data-filter="floors"><button type="button" data-v="all" class="on">Любая этажность</button><button type="button" data-v="1">1 этаж</button><button type="button" data-v="2">2 этажа</button></div>
+              <div class="catalog-sort"><select id="catalogSort" aria-label="Сортировка"><option value="pop">Сначала популярные</option><option value="price">Сначала дешевле</option><option value="price-d">Сначала дороже</option><option value="area">По площади</option></select></div>
+            </div>
+          </div></div>
+          <p class="catalog-count" id="catalogCount"></p>
+          <div class="catalog-grid" id="catalogGrid"></div>
+        </section>
+        <section class="service-path section-dark-soft">
+          <header class="section-heading reveal">
+            <span>КАК МОЖНО НАЧАТЬ</span>
+            <h2>
+              Проект — это<br /><span class="spectrum">точка входа.</span>
+            </h2>
+          </header>
+          <div class="service-rows" id="serviceRows"></div>
+        </section>
+        <div data-footer="projects"></div>
+      </section>
+
+      <section class="view dark-view" data-view-panel="architecture">
+        <section class="hero centered architecture-hero">
+          <div class="hero-copy reveal">
+            <span class="eyebrow">ИНДИВИДУАЛЬНОЕ ПРОЕКТИРОВАНИЕ</span>
+            <h1>
+              Спроектировать<br /><span class="spectrum">дом для вас.</span>
+            </h1>
+            <p>
+              Свет, участок и привычки семьи превращаем в точную архитектуру.
+            </p>
+          </div>
+        </section>
+        <section class="three-principles section-dark-soft">
+          <header class="section-heading reveal">
+            <span>С ЧЕГО НАЧИНАЕМ</span>
+            <h2>Не с фасада.<br />С вашей жизни.</h2>
+          </header>
+          <div class="feature-cards">
+            <article class="feature-card reveal" data-detail="life">
+              <b>01</b>
+              <h3>Сценарий жизни</h3>
+              <p>
+                Кто живёт в доме, как проходит день, где семья встречается и где
+                каждому нужна тишина.
+              </p>
+              <button class="plus" type="button">+</button>
+            </article>
+            <article class="feature-card reveal" data-detail="site">
+              <b>02</b>
+              <h3>Участок</h3>
+              <p>
+                Стороны света, рельеф, видовые оси, подъезд и ограничения
+                территории.
+              </p>
+              <button class="plus" type="button">+</button>
+            </article>
+            <article class="feature-card reveal" data-detail="budget">
+              <b>03</b>
+              <h3>Бюджет</h3>
+              <p>
+                Проверяем решения не только на красоту, но и на стоимость
+                реализации и эксплуатации.
+              </p>
+              <button class="plus" type="button">+</button>
+            </article>
+          </div>
+        </section>
+        <section class="split-story section-dark">
+          <div class="story-copy reveal">
+            <span>АРХИТЕКТУРНАЯ МОДЕЛЬ</span>
+            <h2>
+              Сначала<br /><span class="spectrum">проверяем.</span><br />Потом
+              строим.
+            </h2>
+            <p>
+              До рабочей документации вы видите дом целиком: объём, свет, связи
+              помещений и посадку на участок.
+            </p>
+          </div>
+          <div class="story-visual-wrap reveal">
+            <figure class="story-visual" data-project="Север" tabindex="0">
+              <img
+                src="assets/projects/sever/hero.webp"
+                alt="Архитектурная модель дома"
+              />
+              <figcaption>
+                <span>ПРИМЕР · ПРОЕКТ «СЕВЕР»</span>
+                <strong>Открыть проект</strong>
+              </figcaption>
+            </figure>
+            <button class="primary plum" type="button" data-detail="model">
+              Что входит в проверку
+            </button>
+          </div>
+        </section>
+        <section class="video-story section-dark-soft" data-video-section>
+          <video
+            muted
+            playsinline
+            preload="metadata"
+            src="assets/kontur-scroll.mp4"
+          ></video>
+          <div class="video-overlay">
+            <div class="video-progress"><i></i></div>
+          </div>
+        </section>
+        <section class="horizontal-section section-dark" data-horizontal>
+          <header class="section-heading reveal">
+            <span>РЕЗУЛЬТАТ ПРОЕКТИРОВАНИЯ</span>
+            <h2>От идеи —<br />к комплекту решений.</h2>
+          </header>
+          <div class="horizontal-track" id="architectureTrack"></div>
+          <div class="rail-dots"></div>
+        </section>
+        <div data-footer="architecture"></div>
+      </section>
+
+      <section class="view dark-view" data-view-panel="technology">
+        <section class="hero centered technology-hero">
+          <div class="hero-copy reveal">
+            <span class="eyebrow">ТЕХНОЛОГИИ</span>
+            <h1>Адаптировать<br /><span class="spectrum">проект.</span></h1>
+            <p>
+              Архитектура, конструктив и инженерные системы работают как одна
+              модель.
+            </p>
+          </div>
+          <div class="tech-mark reveal">
+            <b data-count="5">0</b><span>связанных систем</span>
+          </div>
+        </section>
+        <section class="systems-stage section-dark-soft">
+          <header class="section-heading reveal">
+            <span>ОДНА МОДЕЛЬ</span>
+            <h2>Пять систем.<br />Ни одного разрыва.</h2>
+            <p>Наведение показывает роль каждой части дома.</p>
+          </header>
+          <div class="system-console reveal">
+            <div class="system-list" id="systemList"></div>
+            <div class="system-display">
+              <span id="systemCode">АР</span>
+              <h3 id="systemTitle">Архитектура</h3>
+              <p id="systemText">
+                Планировки, фасады, разрезы и ключевые узлы.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="control-story section-dark">
+          <div class="control-number reveal">
+            <b>100%</b><span>критичных решений<br />проверяем до площадки</span>
+          </div>
+          <div class="control-list reveal">
+            <article>
+              <b>01</b>
+              <h3>Коллизии</h3>
+              <p>Проверяем пересечения конструкций и инженерии.</p>
+            </article>
+            <article>
+              <b>02</b>
+              <h3>Узлы</h3>
+              <p>
+                Фиксируем решения, которые нельзя оставлять на усмотрение
+                площадки.
+              </p>
+            </article>
+            <article>
+              <b>03</b>
+              <h3>Спецификации</h3>
+              <p>Связываем материалы и оборудование с проектом.</p>
+            </article>
+          </div>
+        </section>
+        <section class="docs-strip section-dark-soft">
+          <header class="section-heading reveal">
+            <span>ЧТО ПОЛУЧАЕТ КЛИЕНТ</span>
+            <h2>Комплект для проекта,<br />стройки и контроля.</h2>
+          </header>
+          <div class="doc-grid" id="docGrid"></div>
+        </section>
+        <div data-footer="technology"></div>
+      </section>
+
+      <section class="view light-view" data-view-panel="materials">
+        <section class="hero centered materials-hero">
+          <div class="hero-copy reveal">
+            <span class="eyebrow">МАТЕРИАЛЫ И КОМПЛЕКТАЦИЯ</span>
+            <h1>Выбрать<br />материалы.</h1>
+            <p>
+              Выбираем не отдельный образец, а систему: материал, узел, монтаж и
+              срок службы.
+            </p>
+          </div>
+        </section>
+        <section class="material-rules section-light-soft">
+          <header class="section-heading reveal">
+            <span>ПРИНЦИП ВЫБОРА</span>
+            <h2>Три проверки<br />для каждого решения.</h2>
+          </header>
+          <div class="feature-cards light">
+            <article class="feature-card reveal" data-detail="wall">
+              <b>01</b>
+              <h3>Конструкция</h3>
+              <p>
+                Прочность, теплотехника и стоимость готового квадратного метра.
+              </p>
+              <button class="plus" type="button">+</button>
+            </article>
+            <article class="feature-card reveal" data-detail="facade">
+              <b>02</b>
+              <h3>Фасад</h3>
+              <p>Долговечность отделки, подсистемы и всех примыканий.</p>
+              <button class="plus" type="button">+</button>
+            </article>
+            <article class="feature-card reveal" data-detail="supply">
+              <b>03</b>
+              <h3>Поставка</h3>
+              <p>Маркировка, геометрия, влажность и сертификаты до монтажа.</p>
+              <button class="plus" type="button">+</button>
+            </article>
+          </div>
+        </section>
+        <section class="horizontal-section section-light" data-horizontal>
+          <header class="section-heading reveal">
+            <span>БИБЛИОТЕКА РЕШЕНИЙ</span>
+            <h2>Материал — это ещё<br />и ощущение.</h2>
+            <p>Листайте решения стрелками, мышью или касанием.</p>
+          </header>
+          <div class="horizontal-track" id="materialsTrack"></div>
+          <div class="rail-dots"></div>
+        </section>
+        <section class="specification section-light-soft">
+          <div class="spec-copy reveal">
+            <span>КОМПЛЕКТАЦИЯ</span>
+            <h2>Не список покупок.<br /><em>Сценарий поставок.</em></h2>
+            <p>
+              Спецификация связывает проект, график, поставщиков, бюджет и
+              контроль качества.
+            </p>
+            <button class="primary plum" type="button" data-lead="spec">
+              Получить состав спецификации
+            </button>
+          </div>
+          <div class="spec-steps reveal">
+            <article>
+              <b>01</b><span>Материал утверждён в проекте</span>
+            </article>
+            <article>
+              <b>02</b><span>Поставка привязана к графику</span>
+            </article>
+            <article>
+              <b>03</b><span>Приёмка подтверждена документами</span>
+            </article>
+          </div>
+        </section>
+        <div data-footer="materials"></div>
+      </section>
+
+      <section class="view dark-view" data-view-panel="process">
+        <section class="hero centered process-hero">
+          <div class="process-five" aria-hidden="true">5</div>
+          <div class="hero-copy reveal">
+            <span class="eyebrow">КАК РАБОТАЕМ</span>
+            <h1><span>Заказать</span><span>строительство.</span></h1>
+            <p>На каждом этапе понятны решение, документ и следующий шаг.</p>
+          </div>
+        </section>
+        <section class="process-promises section-dark">
+          <div class="promises" id="processPromises"></div>
+        </section>
+        <section class="process-story section-dark-soft">
+          <div class="process-sticky">
+            <span>ЭТАП</span><b id="stageNumber">01</b
+            ><small id="stageLabel">Исходные данные</small>
+          </div>
+          <div class="process-list" id="processList"></div>
+        </section>
+        <section class="faq section-dark">
+          <header class="section-heading reveal">
+            <span>ВАЖНО ЗНАТЬ ЗАРАНЕЕ</span>
+            <h2>Честные ответы<br />до договора.</h2>
+          </header>
+          <div class="faq-list" id="faqList"></div>
+        </section>
+        <div data-footer="process"></div>
+      </section>
+
+      <section class="view dark-view" data-view-panel="experience">
+        <section class="hero experience-hero">
+          <div class="experience-number reveal"><b data-count="5">0</b></div>
+          <div class="hero-copy reveal">
+            <span class="eyebrow">ОПЫТ HBTECH</span>
+            <h1>О компании.<br /><span class="spectrum">5 лет опыта.</span></h1>
+            <p>От первого эскиза до документов, которые остаются с домом.</p>
+          </div>
+        </section>
+        <section class="proof-numbers section-dark-soft">
+          <header class="section-heading reveal">
+            <span>В ЦИФРАХ</span>
+            <h2>Опыт, который<br />можно проверить.</h2>
+          </header>
+          <div class="number-grid" id="numberGrid"></div>
+        </section>
+        <section class="built-objects section-dark">
+          <header class="section-heading reveal">
+            <span>ПОСТРОЕННЫЕ ОБЪЕКТЫ</span>
+            <h2>Проект продолжается<br />на площадке.</h2>
+          </header>
+          <div class="object-grid" id="objectGrid"></div>
+        </section>
+        <section class="team-section section-dark-soft">
+          <header class="section-heading reveal"><span>КОМАНДА</span><h2>Люди, которые<br />отвечают за дом.</h2></header>
+          <div class="team reveal">
+            <figure class="leader"><div class="ph-portrait" aria-hidden="true">АМ</div><figcaption><blockquote>«Мы не продаём квадратные метры. Мы отвечаем за дом, в котором семья будет жить десятилетиями.»</blockquote><b>Алексей Морозов</b><span>Основатель HBTECH · фото и имя — заглушка</span></figcaption></figure>
+            <div class="team-roles" id="teamRoles"></div>
+          </div>
+        </section>
+        <section class="quality-section section-dark">
+          <header class="section-heading reveal"><span>КОНТРОЛЬ КАЧЕСТВА</span><h2>Видно каждый<br />этап стройки.</h2></header>
+          <div class="quality-grid" id="qualityGrid"></div>
+        </section>
+        <section class="reviews section-dark-soft">
+          <header class="section-heading reveal">
+            <span>ОТЗЫВЫ</span>
+            <h2>Что пишут<br />о нас.</h2>
+          </header>
+          <div class="review-grid" id="reviewGrid"></div>
+        </section>
+        <section class="trust-section section-dark">
+          <header class="section-heading reveal">
+            <span>ГАРАНТИИ И ДОКУМЕНТЫ</span>
+            <h2>Ответственность<br />не заканчивается ключами.</h2>
+          </header>
+          <div class="trust-grid" id="trustGrid"></div>
+          <div class="partner-title">С КЕМ СОТРУДНИЧАЕМ</div>
+          <div class="partner-line" id="partnerLine"></div>
+        </section>
+        <section class="mortgage-section section-dark-soft">
+          <div class="mortgage reveal">
+            <div><span class="eyebrow">ИПОТЕКА</span><h2>Дом в ипотеку<br />без лишних визитов.</h2><p>Аккредитованы в банках-партнёрах: подберём программу, соберём документы и сопроводим сделку.</p><div class="mort-programs" id="mortPrograms"></div><button class="primary" type="button" data-lead="mortgage">Подобрать ипотеку</button></div>
+            <div class="banks" id="bankList"></div>
+          </div>
+        </section>
+        <section class="office-section section-dark">
+          <div class="office reveal">
+            <div class="office-map" aria-hidden="true"><svg viewBox="0 0 400 260"><path d="M0 70h400M0 180h400M90 0v260M250 0v260M0 240l400-150M160 0l60 260" /><circle cx="250" cy="130" r="9"/><circle cx="250" cy="130" r="22" class="pulse"/></svg></div>
+            <div><span class="eyebrow">ОФИС И ЭКСКУРСИЯ</span><h2>Приезжайте<br />посмотреть вживую.</h2><p id="officeAddr"></p><p>Покажем образцы материалов и отвезём на объект, который строится прямо сейчас.</p><button class="primary" type="button" data-lead="consult">Записаться на экскурсию</button></div>
+          </div>
+        </section>
+        <section class="faq-company section-dark-soft">
+          <header class="section-heading reveal"><span>ВОПРОСЫ</span><h2>Коротко<br />о главном.</h2></header>
+          <div class="faq-list" id="companyFaq"></div>
+        </section>
+        <div data-footer="experience"></div>
+      </section>
+      <section class="view dark-view" data-view-panel="calc">
+        <section class="calc-section section-dark">
+          <button type="button" class="back-pill" id="calcBack" hidden>←︎ Вернуться к проекту</button>
+          <header class="section-heading reveal">
+            <span>КАЛЬКУЛЯТОР</span>
+            <h2>Сколько стоит<br />построить дом.</h2>
+          </header>
+          <div class="calc reveal">
+            <div class="calc-form">
+              <div class="calc-row"><div class="calc-label">Площадь дома <output id="calcAreaOut">150 м²</output></div><input type="range" id="calcArea" min="80" max="400" step="5" value="150" /></div>
+              <div class="calc-row"><div class="calc-label">Этажность</div><div class="seg" data-calc="floors"><button type="button" data-v="1">1 этаж</button><button type="button" data-v="m" class="on">1 + мансарда</button><button type="button" data-v="2">2 этажа</button></div></div>
+              <div class="calc-row"><div class="calc-label">Материал стен</div><div class="seg" data-calc="mat"><button type="button" data-v="gas" class="on">Газобетон</button><button type="button" data-v="cer">Керамический блок</button><button type="button" data-v="brick">Кирпич</button></div></div>
+              <div class="calc-row"><div class="calc-label">Комплектация</div><div class="seg" data-calc="pack"><button type="button" data-v="box">Коробка</button><button type="button" data-v="warm" class="on">Тёплый контур</button><button type="button" data-v="key">Под ключ</button></div></div>
+            </div>
+            <div class="calc-result">
+              <span>Ориентировочная стоимость</span>
+              <b id="calcRange"></b>
+              <p id="calcPer"></p>
+              <p class="calc-inc" id="calcInc"></p>
+              <p class="calc-mort"><span id="calcMort"></span> <button type="button" class="link-btn" data-goto-mortgage>Об ипотеке →︎</button></p>
+              <button class="primary" type="button" data-lead="build">Получить точную смету</button>
+              <small>Точная смета бесплатно за 1–3 рабочих дня. Цены на сайте условные.</small>
+            </div>
+          </div>
+        </section>
+        <div data-footer="calc"></div>
+      </section>
+    </main>
+    <div class="msg-fab" id="msgFab">
+      <div class="msg-list" id="msgList"></div>
+      <button type="button" class="msg-toggle" id="msgToggle" aria-label="Написать нам" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg></button>
+    </div>
+
+    <section class="project-detail" id="projectDetail" aria-hidden="true">
+      <div class="project-scroll">
+        <button
+          class="round-close"
+          type="button"
+          id="projectClose"
+          aria-label="Закрыть проект"
+        >
+          ×
+        </button>
+        <section class="covered-hero" id="pdHero">
+          <div class="covered-word" id="pdWord" aria-hidden="true"></div>
+          <div class="covered-copy">
+            <span id="pdType"></span>
+            <h1 id="pdTitle"></h1>
+            <p id="pdLead"></p>
+            <div>
+              <button class="primary" type="button" id="pdBuy">Купить проект</button><button class="ghost" type="button" id="pdPdf">
+                Получить PDF</button
+              ><button class="ghost" type="button" id="pdCompare">
+                Добавить к сравнению
+              </button>
+            </div>
+          </div>
+          <figure class="pd-hero-frame"><img id="pdHeroImg" alt="" /></figure>
+        </section>
+        <section class="pd-facts" id="pdFacts"></section>
+        <section class="pd-intro section-dark">
+          <header class="section-heading">
+            <span>АРХИТЕКТУРА ПРОЕКТА</span>
+            <h2 id="pdStatement"></h2>
+            <p id="pdDescription"></p>
+          </header>
+        </section>
+        <section class="pd-gallery section-dark-soft">
+          <header class="section-heading">
+            <span>ДОМ СО ВСЕХ СТОРОН</span>
+            <h2>Архитектура<br />в деталях.</h2>
+          </header>
+          <div class="gallery-grid" id="pdGallery"></div>
+        </section>
+        <section class="pd-plans section-dark">
+          <header class="section-heading">
+            <span>ПЛАНЫ И ФАСАДЫ</span>
+            <h2>Логика дома<br />на одном экране.</h2>
+          </header>
+          <div class="plans-grid" id="pdPlans"></div>
+        </section>
+        <section class="pd-packages section-dark-soft">
+          <header class="section-heading">
+            <span>КОМПЛЕКТЫ ПРОЕКТА</span>
+            <h2>Что входит в проект.</h2>
+          </header>
+          <div class="pkg-compare" id="pdPackages"></div>
+          <p class="pkg-free"><button type="button" id="pdFreePdf">Скачать ознакомительный PDF бесплатно →︎</button></p>
+          <div class="pkg-extra" id="pdExtra"></div>
+        </section>
+        <section class="pd-adapt section-dark">
+          <header class="section-heading">
+            <span>АДАПТАЦИЯ</span>
+            <h2>Проект под ваш<br />участок и задачи.</h2>
+          </header>
+          <div class="adapt-layout">
+            <div class="adapt-options" id="adaptOptions"></div>
+            <figure>
+              <img id="adaptImage" alt="" />
+              <figcaption id="adaptCaption"></figcaption>
+            </figure>
+          </div>
+        </section>
+        <section class="pd-related section-dark-soft">
+          <header class="section-heading">
+            <span>СРАВНИТЬ ВАРИАНТЫ</span>
+            <h2>Другой характер.<br />Та же точность.</h2>
+          </header>
+          <div class="related-grid" id="pdRelated"></div>
+        </section>
+        <div data-footer="project"></div>
+      </div>
+    </section>
+    <div class="compare-dock" id="compareDock">
+      <div class="compare-slots" id="compareSlots"></div>
+      <button class="primary" type="button" id="openCompare">Сравнить</button>
+      <button class="dock-hide" type="button" id="dockHide" aria-label="Скрыть панель сравнения">×</button>
+      <button class="dock-mini" type="button" id="dockMini"></button>
+    </div>
+    <div class="sheet" id="detailSheet" aria-hidden="true">
+      <div class="sheet-panel">
+        <button class="round-close" type="button" data-close-sheet>×</button
+        ><span class="eyebrow" id="sheetEyebrow"></span>
+        <h2 id="sheetTitle"></h2>
+        <p class="sheet-lead" id="sheetText"></p>
+        <div class="sheet-points" id="sheetPoints"></div>
+      </div>
+    </div>
+    <div class="sheet" id="leadSheet" aria-hidden="true">
+      <div class="sheet-panel lead-panel">
+        <button class="round-close" type="button" data-close-lead>×</button
+        ><span class="eyebrow" id="leadEyebrow">НАЧАТЬ РАЗГОВОР</span>
+        <h2 id="leadTitle">Получить проект</h2>
+        <p class="sheet-lead" id="leadText"></p>
+        <div class="lead-project-picker" id="leadProjectPicker"></div>
+        <div class="lead-packages" id="leadPackages" hidden></div>
+        <form id="leadForm">
+          <input name="name" placeholder="Имя *" required autocomplete="name" />
+          <input name="phone" type="tel" placeholder="Телефон *" required autocomplete="tel" />
+          <div class="msg-choice-wrap"><span id="msgChoiceLabel">Куда прислать ответ</span>
+            <div class="seg msg-choice" id="msgChoice"><button type="button" data-v="WhatsApp" class="on">WhatsApp</button><button type="button" data-v="Telegram">Telegram</button><button type="button" data-v="MAX">MAX</button></div>
+            <input type="hidden" name="messenger" value="WhatsApp" />
+          </div>
+          <input name="email" type="email" placeholder="Email (необязательно)" autocomplete="email" />
+          <textarea name="task" rows="3" placeholder="Что важно учесть"></textarea>
+          <label class="consent"><input type="checkbox" name="privacy" required /> Согласен на обработку персональных данных в соответствии с <a href="#" id="privacyLink">политикой конфиденциальности</a></label>
+          <button class="primary" type="submit">Отправить запрос</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <h3>Запрос отправлен.</h3>
+          <p id="successText">Свяжемся выбранным способом.</p>
+          <a id="leadDownload" href="#" target="_blank" rel="noopener"
+            >Открыть PDF</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="sheet compare-sheet" id="compareSheet" aria-hidden="true">
+      <div class="sheet-panel">
+        <button class="round-close" type="button" data-close-compare>×</button
+        ><span class="eyebrow">СРАВНЕНИЕ ПРОЕКТОВ</span>
+        <div class="compare-top"><h2>Сравните до трёх домов.</h2><label class="diff-toggle"><input type="checkbox" id="diffOnly" /><i></i>Только различия</label></div>
+        <div class="compare-picker" id="comparePicker" hidden></div>
+        <div class="compare-grid" id="compareTable"></div>
+      </div>
+    </div>
+    <div class="viewer" id="gallerySheet" aria-hidden="true">
+      <div class="viewer-bg" id="viewerBg"></div>
+      <div class="viewer-stage" id="viewerStage"></div>
+      <button class="viewer-close" type="button" data-close-gallery aria-label="Закрыть">×</button>
+      <button class="viewer-nav prev gallery-nav" type="button" aria-label="Предыдущее изображение">←︎</button>
+      <button class="viewer-nav next gallery-nav" type="button" aria-label="Следующее изображение">→︎</button>
+      <div class="viewer-bar">
+        <div class="viewer-cap"><span id="galleryPlace"></span><h2 id="galleryTitle"></h2></div>
+        <div class="viewer-thumbs" id="viewerThumbs"></div>
+        <div class="viewer-act"><b id="galleryIndex"></b><button class="pill-link" type="button" id="galleryLink" hidden>Открыть проект <i>↗︎</i></button></div>
+      </div>
+      <div class="viewer-progress"><i id="viewerProg"></i></div>
+    </div>
+    <script src="data/content.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
