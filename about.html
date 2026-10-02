@@ -20,22 +20,22 @@
     <link rel="canonical" href="https://amigoo7g.github.io/hbtech/about.html" />
     <link rel="icon" type="image/svg+xml" href="assets/hbtech-logo.svg" />
     <link rel="stylesheet" href="styles.css" />
-  </head>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HomeAndConstructionBusiness", "name": "HBTECH", "url": "https://amigoo7g.github.io/hbtech/", "logo": "https://amigoo7g.github.io/hbtech/assets/hbtech-logo.svg", "image": "https://amigoo7g.github.io/hbtech/assets/og-cover.jpg", "telephone": "+7 (495) 120-17-05", "email": "hello@hbtech.ru", "areaServed": "Москва и Московская область", "address": {"@type": "PostalAddress", "addressLocality": "Москва", "addressCountry": "RU"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://amigoo7g.github.io/hbtech/"}, {"@type": "ListItem", "position": 2, "name": "О компании", "item": "https://amigoo7g.github.io/hbtech/about.html"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько строится дом?", "acceptedAnswer": {"@type": "Answer", "text": "Коробка дома 150–200 м² — 3–5 месяцев. С отделкой — ещё 2–3 месяца."}}, {"@type": "Question", "name": "Может ли вырасти цена?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. После точной сметы цена фиксируется в договоре и не меняется."}}, {"@type": "Question", "name": "Как платить?", "acceptedAnswer": {"@type": "Answer", "text": "Этапами, 6–9 платежей — вы платите за уже выполненную работу."}}, {"@type": "Question", "name": "Какая гарантия?", "acceptedAnswer": {"@type": "Answer", "text": "5 лет на конструктив и кровлю, условия прописаны в договоре."}}, {"@type": "Question", "name": "Можно ли изменить готовый проект?", "acceptedAnswer": {"@type": "Answer", "text": "Да, адаптируем планировку и конструктив под участок и семью."}}]}</script>
+    </head>
   <body data-page="experience">
     <header class="site-nav" id="siteNav">
-      <button
-        class="nav-brand"
-        type="button"
-        data-view="home"
-        aria-label="HBTECH — на главную"
-      >
+      <a
+        class="nav-brand" 
+        aria-label="HBTECH — на главную" href="index.html" data-view="home">
         <img src="assets/hbtech-logo.svg" alt="" />
-      </button>
+      </a>
       <nav class="nav-links" aria-label="Основная навигация">
-        <button type="button" data-view="projects">Проекты</button
-        ><button type="button" data-view="process">Строительство</button
-        ><button type="button" data-view="architecture">Индивидуальный дом</button
-        ><button type="button" data-view="experience">О компании</button>
+        <a href="projects.html" data-view="projects">Проекты</a
+        ><a href="build.html" data-view="process">Строительство</a
+        ><a href="custom.html" data-view="architecture">Индивидуальный дом</a
+        ><a href="about.html" data-view="experience">О компании</a>
       </nav>
       <a class="nav-phone" id="navPhone" href="#"></a><button class="nav-cta" type="button" data-lead="project">
         Получить проект</button
@@ -51,10 +51,10 @@
     <aside class="menu-drawer" aria-hidden="true">
       <div class="drawer-brand">HBTECH</div>
       <nav aria-label="Мобильная навигация">
-        <button type="button" data-view="projects"><b>01</b>Проекты</button
-        ><button type="button" data-view="process"><b>02</b>Строительство</button
-        ><button type="button" data-view="architecture"><b>03</b>Индивидуальный дом</button
-        ><button type="button" data-view="experience"><b>04</b>О компании</button>
+        <a href="projects.html" data-view="projects"><b>01</b>Проекты</a
+        ><a href="build.html" data-view="process"><b>02</b>Строительство</a
+        ><a href="custom.html" data-view="architecture"><b>03</b>Индивидуальный дом</a
+        ><a href="about.html" data-view="experience"><b>04</b>О компании</a>
       </nav>
       <button class="primary" type="button" data-lead="project">
         Получить проект
@@ -75,59 +75,59 @@
             <span>В ЦИФРАХ</span>
             <h2>Опыт, который<br />можно проверить.</h2>
           </header>
-          <div class="number-grid" id="numberGrid"></div>
+          <div class="number-grid" id="numberGrid"><article class="reveal"><span>построенных домов</span><b data-count="120">120</b><p>В Москве и области с 2021 года.</p></article><article class="reveal"><span>спроектированных</span><b data-count="340">340</b><p>Готовые и индивидуальные проекты.</p></article><article class="reveal"><span>м² построено</span><b data-count="18400">18&nbsp;400</b><p>Жилой площади сдано по актам.</p></article><article class="reveal"><span>лет гарантии</span><b data-count="5">5</b><p>На конструктив и кровлю по договору.</p></article></div>
         </section>
         <section class="built-objects section-dark">
           <header class="section-heading reveal">
             <span>ПОСТРОЕННЫЕ ОБЪЕКТЫ</span>
             <h2>Проект продолжается<br />на площадке.</h2>
           </header>
-          <div class="object-grid" id="objectGrid"></div>
+          <div class="object-grid" id="objectGrid"><article class="object-card"><figure class="ph-photo"><span>ФОТО ОБЪЕКТА<br><small>заменить на реальное</small></span></figure><div class="object-info"><span>2024 · 186 м² · стройка 4,5 месяца</span><h3>Истра, КП «Лесное»</h3><a class="pill-link" href="project-sever.html" data-obj-open="Север">по проекту «Север» <i>↗︎</i></a></div></article><article class="object-card"><figure class="ph-photo"><span>ФОТО ОБЪЕКТА<br><small>заменить на реальное</small></span></figure><div class="object-info"><span>2024 · 214 м² · стройка 5 месяцев</span><h3>Новая Москва, Ватутинки</h3><a class="pill-link" href="project-sad.html" data-obj-open="Сад">по проекту «Сад» <i>↗︎</i></a></div></article><article class="object-card"><figure class="ph-photo"><span>ФОТО ОБЪЕКТА<br><small>заменить на реальное</small></span></figure><div class="object-info"><span>2023 · 168 м² · стройка 4 месяца</span><h3>Руза, д. Нестерово</h3><a class="pill-link" href="project-gorizont.html" data-obj-open="Горизонт">по проекту «Горизонт» <i>↗︎</i></a></div></article><article class="object-card"><figure class="ph-photo"><span>ФОТО ОБЪЕКТА<br><small>заменить на реальное</small></span></figure><div class="object-info"><span>2023 · 156 м² · стройка 3,5 месяца</span><h3>Одинцово, КП «Резиденция»</h3><a class="pill-link" href="project-liniya.html" data-obj-open="Линия">по проекту «Линия» <i>↗︎</i></a></div></article><article class="object-card"><figure class="ph-photo"><span>ФОТО ОБЪЕКТА<br><small>заменить на реальное</small></span></figure><div class="object-info"><span>2022 · 132 м² · стройка 3 месяца</span><h3>Дмитров, д. Ивлево</h3><a class="pill-link" href="project-dvor.html" data-obj-open="Двор">по проекту «Двор» <i>↗︎</i></a></div></article></div>
         </section>
         <section class="team-section section-dark-soft">
           <header class="section-heading reveal"><span>КОМАНДА</span><h2>Люди, которые<br />отвечают за дом.</h2></header>
           <div class="team reveal">
             <figure class="leader"><div class="ph-portrait" aria-hidden="true">АМ</div><figcaption><blockquote>«Мы не продаём квадратные метры. Мы отвечаем за дом, в котором семья будет жить десятилетиями.»</blockquote><b>Алексей Морозов</b><span>Основатель HBTECH · фото и имя — заглушка</span></figcaption></figure>
-            <div class="team-roles" id="teamRoles"></div>
+            <div class="team-roles" id="teamRoles"><div><b>6</b><span>архитекторов</span></div><div><b>4</b><span>инженера-конструктора</span></div><div><b>8</b><span>прорабов на объектах</span></div><div><b>2</b><span>инженера технадзора</span></div></div>
           </div>
         </section>
         <section class="quality-section section-dark">
           <header class="section-heading reveal"><span>КОНТРОЛЬ КАЧЕСТВА</span><h2>Видно каждый<br />этап стройки.</h2></header>
-          <div class="quality-grid" id="qualityGrid"></div>
+          <div class="quality-grid" id="qualityGrid"><article class="reveal"><i>01</i><h3>16 выездов</h3><p>Технадзор проверяет каждый этап по проекту и технологии.</p></article><article class="reveal"><i>02</i><h3>Фотоотчёт</h3><p>Каждую неделю — фото и короткий отчёт в мессенджер.</p></article><article class="reveal"><i>03</i><h3>Скрытые работы</h3><p>Арматура, утепление, гидроизоляция принимаются по актам.</p></article><article class="reveal"><i>04</i><h3>Камеры</h3><p>По желанию ставим камеру — стройка видна в любое время.</p></article></div>
         </section>
         <section class="reviews section-dark-soft">
           <header class="section-heading reveal">
             <span>ОТЗЫВЫ</span>
             <h2>Что пишут<br />о нас.</h2>
           </header>
-          <div class="review-grid" id="reviewGrid"></div>
+          <div class="review-grid" id="reviewGrid"><article class="review-card reveal"><blockquote>«Самое ценное — все спорные решения закрывались до стройки. На площадке не приходилось выбирать между красивым и технически правильным.»</blockquote><footer><b>Алексей и Мария</b><span>Дом у леса</span></footer></article><article class="review-card reveal"><blockquote>«Начали с готового проекта, изменили хозяйственный блок и посадку. Получили понятную смету и не потеряли архитектуру.»</blockquote><footer><b>Илья</b><span>Проект «Линия»</span></footer></article><article class="review-card reveal"><blockquote>«После передачи у нас остался не только дом, но и полный архив: схемы, паспорта оборудования и фотографии скрытых работ.»</blockquote><footer><b>Наталья</b><span>Дом с садом</span></footer></article></div>
         </section>
         <section class="trust-section section-dark">
           <header class="section-heading reveal">
             <span>ГАРАНТИИ И ДОКУМЕНТЫ</span>
             <h2>Ответственность<br />не заканчивается ключами.</h2>
           </header>
-          <div class="trust-grid" id="trustGrid"></div>
+          <div class="trust-grid" id="trustGrid"><article class="reveal"><h3>Гарантия</h3><p>Сроки, условия и порядок обращения фиксируются в договоре и гарантийном регламенте.</p></article><article class="reveal"><h3>Сертификаты</h3><p>Паспорта и сертификаты на материалы и оборудование входят в архив объекта.</p></article><article class="reveal"><h3>История строительства</h3><p>Фото скрытых работ, акты и исполнительные схемы сохраняются для эксплуатации.</p></article><article class="reveal"><h3>Поддержка</h3><p>После передачи команда помогает разобраться с настройкой и регламентным обслуживанием систем.</p></article></div>
           <div class="partner-title">С КЕМ СОТРУДНИЧАЕМ</div>
-          <div class="partner-line" id="partnerLine"></div>
+          <div class="partner-line" id="partnerLine"><span>KERAMA MARAZZI</span><span>REHAU</span><span>ROCKWOOL</span><span>SCHNEIDER</span><span>TECE</span></div>
         </section>
         <section class="mortgage-section section-dark-soft">
           <div class="mortgage reveal">
-            <div><span class="eyebrow">ИПОТЕКА</span><h2>Дом в ипотеку<br />без лишних визитов.</h2><p>Аккредитованы в банках-партнёрах: подберём программу, соберём документы и сопроводим сделку.</p><div class="mort-programs" id="mortPrograms"></div><button class="primary" type="button" data-lead="mortgage">Подобрать ипотеку</button></div>
-            <div class="banks" id="bankList"></div>
+            <div><span class="eyebrow">ИПОТЕКА</span><h2>Дом в ипотеку<br />без лишних визитов.</h2><p>Аккредитованы в банках-партнёрах: подберём программу, соберём документы и сопроводим сделку.</p><div class="mort-programs" id="mortPrograms"><div><span>Семейная ипотека</span><b>от 6%</b></div><div><span>Ипотека на ИЖС</span><b>от 9,5%</b></div><div><span>Рассрочка на проект</span><b>0% до 6 месяцев</b></div></div><button class="primary" type="button" data-lead="mortgage">Подобрать ипотеку</button></div>
+            <div class="banks" id="bankList"><span>Банк-партнёр 1</span><span>Банк-партнёр 2</span><span>Банк-партнёр 3</span><span>Банк-партнёр 4</span></div>
           </div>
         </section>
         <section class="office-section section-dark">
           <div class="office reveal">
             <div class="office-map" aria-hidden="true"><svg viewBox="0 0 400 260"><path d="M0 70h400M0 180h400M90 0v260M250 0v260M0 240l400-150M160 0l60 260" /><circle cx="250" cy="130" r="9"/><circle cx="250" cy="130" r="22" class="pulse"/></svg></div>
-            <div><span class="eyebrow">ОФИС И ЭКСКУРСИЯ</span><h2>Приезжайте<br />посмотреть вживую.</h2><p id="officeAddr"></p><p>Покажем образцы материалов и отвезём на объект, который строится прямо сейчас.</p><button class="primary" type="button" data-lead="consult">Записаться на экскурсию</button></div>
+            <div><span class="eyebrow">ОФИС И ЭКСКУРСИЯ</span><h2>Приезжайте<br />посмотреть вживую.</h2><p id="officeAddr">Москва, Пресненская наб., 12 · Пн–Сб 10:00–19:00 (адрес — заглушка)</p><p>Покажем образцы материалов и отвезём на объект, который строится прямо сейчас.</p><button class="primary" type="button" data-lead="consult">Записаться на экскурсию</button></div>
           </div>
         </section>
         <section class="faq-company section-dark-soft">
           <header class="section-heading reveal"><span>ВОПРОСЫ</span><h2>Коротко<br />о главном.</h2></header>
-          <div class="faq-list" id="companyFaq"></div>
+          <div class="faq-list" id="companyFaq"><details><summary>Сколько строится дом?<i>+</i></summary><div class="faq-a"><p>Коробка дома 150–200 м² — 3–5 месяцев. С отделкой — ещё 2–3 месяца.</p></div></details><details><summary>Может ли вырасти цена?<i>+</i></summary><div class="faq-a"><p>Нет. После точной сметы цена фиксируется в договоре и не меняется.</p></div></details><details><summary>Как платить?<i>+</i></summary><div class="faq-a"><p>Этапами, 6–9 платежей — вы платите за уже выполненную работу.</p></div></details><details><summary>Какая гарантия?<i>+</i></summary><div class="faq-a"><p>5 лет на конструктив и кровлю, условия прописаны в договоре.</p></div></details><details><summary>Можно ли изменить готовый проект?<i>+</i></summary><div class="faq-a"><p>Да, адаптируем планировку и конструктив под участок и семью.</p></div></details></div>
         </section>
-        <div data-footer="experience"></div>
+        <div data-footer="experience"><footer class="site-footer"><div class="footer-top"><div class="footer-brand"><b>HBTECH</b><p>Готовые проекты, индивидуальная архитектура, адаптация и строительство загородных домов одной командой.</p></div><div class="footer-cta"><span>Познакомимся лично</span><h2>Связаться с нами</h2><button class="primary" type="button" data-lead="consult">Связаться с нами</button></div></div><div class="footer-extra"><span>Можно добавить</span><button data-lead="adapt">Адаптация проекта</button><a class="fl" href="calc.html" data-view="calc">Расчёт строительства</a><button data-lead="consult">Ипотека и рассрочка</button><a class="fl" href="projects.html" data-view="projects">Сравнить проекты</a></div><div class="footer-grid"><div class="footer-col"><b>Контакты</b><a href="tel:+74951201705">+7 (495) 120-17-05</a><a href="mailto:hello@hbtech.ru">hello@hbtech.ru</a><a href="https://wa.me/74951201705" target="_blank" rel="noopener">WhatsApp</a><a href="https://t.me/hbtech_demo" target="_blank" rel="noopener">Telegram</a><a href="https://max.ru/hbtech_demo" target="_blank" rel="noopener">MAX</a><span>Москва и Московская область</span><span>Пн–Пт · 09:00–19:00</span></div><div class="footer-col"><b>Продукты</b><a class="fl" href="projects.html" data-view="projects">Готовые проекты</a><a class="fl" href="custom.html" data-view="architecture">Индивидуальный проект</a><button data-lead="adapt">Адаптация</button><button data-lead="build">Строительство</button></div><div class="footer-col"><b>Компания</b><a class="fl" href="about.html" data-view="experience">Опыт и объекты</a><a class="fl" href="tech.html" data-view="technology">Технологии</a><a class="fl" href="materials.html" data-view="materials">Материалы</a><a class="fl" href="build.html" data-view="process">Как работаем</a></div><div class="footer-col"><b>Документы</b><button data-legal="privacy">Конфиденциальность</button><button data-legal="offer">Условия работы</button><button data-legal="details">Реквизиты</button></div></div><div class="footer-bottom"><span>© 2026 HBTECH</span><span>Проекты и строительство частных домов</span></div></footer></div>
       </section>
     </main>
     <div class="msg-fab" id="msgFab">

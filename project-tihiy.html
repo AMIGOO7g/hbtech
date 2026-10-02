@@ -20,22 +20,22 @@
     <link rel="canonical" href="https://amigoo7g.github.io/hbtech/project-tihiy.html" />
     <link rel="icon" type="image/svg+xml" href="assets/hbtech-logo.svg" />
     <link rel="stylesheet" href="styles.css" />
-  </head>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HomeAndConstructionBusiness", "name": "HBTECH", "url": "https://amigoo7g.github.io/hbtech/", "logo": "https://amigoo7g.github.io/hbtech/assets/hbtech-logo.svg", "image": "https://amigoo7g.github.io/hbtech/assets/og-cover.jpg", "telephone": "+7 (495) 120-17-05", "email": "hello@hbtech.ru", "areaServed": "Москва и Московская область", "address": {"@type": "PostalAddress", "addressLocality": "Москва", "addressCountry": "RU"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Проект дома «Тихий»", "description": "Рациональный одноэтажный дом с защищённым двором и собранной планировкой. 98 м², 1 этаж, 2 спальни. Цена проекта 320 000 ₽, строительство от 11,9 млн ₽.", "image": ["https://amigoo7g.github.io/hbtech/assets/project-dvor.webp", "https://amigoo7g.github.io/hbtech/assets/projects/dvor/plan-1.webp"], "brand": {"@type": "Brand", "name": "HBTECH"}, "category": "Компактный дом для двоих", "offers": {"@type": "Offer", "price": 320000, "priceCurrency": "RUB", "availability": "https://schema.org/InStock", "url": "https://amigoo7g.github.io/hbtech/project-tihiy.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://amigoo7g.github.io/hbtech/"}, {"@type": "ListItem", "position": 2, "name": "Проекты", "item": "https://amigoo7g.github.io/hbtech/projects.html"}, {"@type": "ListItem", "position": 3, "name": "Проект «Тихий»", "item": "https://amigoo7g.github.io/hbtech/project-tihiy.html"}]}</script>
+    </head>
   <body data-page="project" data-project="Тихий">
     <header class="site-nav" id="siteNav">
-      <button
-        class="nav-brand"
-        type="button"
-        data-view="home"
-        aria-label="HBTECH — на главную"
-      >
+      <a
+        class="nav-brand" 
+        aria-label="HBTECH — на главную" href="index.html" data-view="home">
         <img src="assets/hbtech-logo.svg" alt="" />
-      </button>
+      </a>
       <nav class="nav-links" aria-label="Основная навигация">
-        <button type="button" data-view="projects">Проекты</button
-        ><button type="button" data-view="process">Строительство</button
-        ><button type="button" data-view="architecture">Индивидуальный дом</button
-        ><button type="button" data-view="experience">О компании</button>
+        <a href="projects.html" data-view="projects">Проекты</a
+        ><a href="build.html" data-view="process">Строительство</a
+        ><a href="custom.html" data-view="architecture">Индивидуальный дом</a
+        ><a href="about.html" data-view="experience">О компании</a>
       </nav>
       <a class="nav-phone" id="navPhone" href="#"></a><button class="nav-cta" type="button" data-lead="project">
         Получить проект</button
@@ -51,10 +51,10 @@
     <aside class="menu-drawer" aria-hidden="true">
       <div class="drawer-brand">HBTECH</div>
       <nav aria-label="Мобильная навигация">
-        <button type="button" data-view="projects"><b>01</b>Проекты</button
-        ><button type="button" data-view="process"><b>02</b>Строительство</button
-        ><button type="button" data-view="architecture"><b>03</b>Индивидуальный дом</button
-        ><button type="button" data-view="experience"><b>04</b>О компании</button>
+        <a href="projects.html" data-view="projects"><b>01</b>Проекты</a
+        ><a href="build.html" data-view="process"><b>02</b>Строительство</a
+        ><a href="custom.html" data-view="architecture"><b>03</b>Индивидуальный дом</a
+        ><a href="about.html" data-view="experience"><b>04</b>О компании</a>
       </nav>
       <button class="primary" type="button" data-lead="project">
         Получить проект
@@ -81,7 +81,7 @@
           <div class="covered-copy">
             <h1 id="pdTitle">Тихий</h1>
             <p id="pdLead">Рациональный одноэтажный дом с защищённым двором и собранной планировкой.</p>
-            <p class="pd-factline" id="pdFactLine"></p>
+            <p class="pd-factline" id="pdFactLine"><span><b>98 м²</b><small>площадь</small></span><span><b>1 этаж</b><small>этажность</small></span><span><b>2 спальни</b><small>спальни</small></span><span><b>320&nbsp;000&nbsp;₽</b><small>проект</small></span></p>
           </div>
           <figure class="pd-hero-frame"><img id="pdHeroImg" alt="" /></figure>
           <div class="pd-hero-actions">
@@ -95,37 +95,37 @@
         <section class="pd-gallery section-dark-soft">
           <header class="section-heading">
             <span>АРХИТЕКТУРА ПРОЕКТА</span>
-            <h2 id="pdStatement"></h2>
-            <p id="pdDescription"></p>
+            <h2 id="pdStatement">Компактный дом, в котором хватает воздуха.</h2>
+            <p id="pdDescription">Общая зона занимает центр дома, спальни разнесены по сторонам. Защищённая терраса работает как летняя гостиная.</p>
           </header>
-          <div class="gallery-grid" id="pdGallery"></div>
+          <div class="gallery-grid" id="pdGallery"><figure tabindex="0" role="button"><img srcset="assets/project-dvor-sm.webp 800w, assets/project-dvor.webp 1600w" sizes="(max-width:760px) 92vw, 50vw" loading="lazy" src="assets/project-dvor.webp" alt="Проект Тихий, вид 1"></figure><figure tabindex="0" role="button"><img srcset="assets/projects/dvor/plan-1-sm.webp 800w, assets/projects/dvor/plan-1.webp 1600w" sizes="(max-width:760px) 92vw, 50vw" loading="lazy" src="assets/projects/dvor/plan-1.webp" alt="Проект Тихий, вид 2"></figure></div>
         </section>
         <section class="pd-plans section-dark">
           <header class="section-heading">
             <span>ПЛАНИРОВКА</span>
             <h2>Планы этажей.</h2>
           </header>
-          <div class="plan-tabs seg" id="planTabs"></div>
-          <div class="plan-view" id="pdPlans"></div>
+          <div class="plan-tabs seg" id="planTabs"><button type="button" class="on">1 этаж</button><button type="button">2 этаж</button></div>
+          <div class="plan-view" id="pdPlans"><figure><img srcset="assets/projects/dvor/plan-1-sm.webp 800w, assets/projects/dvor/plan-1.webp 1600w" sizes="(max-width:760px) 92vw, 50vw" loading="eager" src="assets/projects/dvor/plan-1.webp" alt="Проект Тихий, план 1 этажа"></figure></div>
         </section>
         <section class="pd-packages section-dark-soft">
           <header class="section-heading">
             <span>КОМПЛЕКТЫ ПРОЕКТА</span>
             <h2>Что входит в проект.</h2>
           </header>
-          <div class="pkg-compare" id="pdPackages"></div>
-          <div class="pkg-cards" id="pdPkgCards"></div>
+          <div class="pkg-compare" id="pdPackages"><div class="pkg-head"><span></span><div data-c="0"><b>Эскизный проект</b><strong>128&nbsp;000&nbsp;₽</strong><small>рассрочка 0%: 6 платежей по 21&nbsp;000&nbsp;₽</small></div><div data-c="1"><em class="pkg-rec">Рекомендуем</em><b>Рабочий проект</b><strong>320&nbsp;000&nbsp;₽</strong><small>рассрочка 0%: 6 платежей по 53&nbsp;000&nbsp;₽</small></div><div data-c="2"><b>Полный комплект</b><strong>464&nbsp;000&nbsp;₽</strong><small>рассрочка 0%: 6 платежей по 77&nbsp;000&nbsp;₽</small></div></div><div class="pkg-row"><span>Планы этажей</span><i data-c="0" class="yes"><span>✓</span></i><i data-c="1" class="yes"><span>✓</span></i><i data-c="2" class="yes"><span>✓</span></i></div><div class="pkg-row"><span>Фасады и разрезы</span><i data-c="0" class="yes"><span>✓</span></i><i data-c="1" class="yes"><span>✓</span></i><i data-c="2" class="yes"><span>✓</span></i></div><div class="pkg-row"><span>Конструктивные решения</span><i data-c="0" class="no">—</i><i data-c="1" class="yes"><span>✓</span></i><i data-c="2" class="yes"><span>✓</span></i></div><div class="pkg-row"><span>Спецификации материалов</span><i data-c="0" class="no">—</i><i data-c="1" class="yes"><span>✓</span></i><i data-c="2" class="yes"><span>✓</span></i></div><div class="pkg-row"><span>Инженерные системы</span><i data-c="0" class="no">—</i><i data-c="1" class="no">—</i><i data-c="2" class="yes"><span>✓</span></i></div><div class="pkg-row pkg-buy"><span></span><div data-c="0"><button type="button" class="ghost" data-buy="sketch">Купить</button></div><div data-c="1"><button type="button" class="primary" data-buy="work">Купить</button></div><div data-c="2"><button type="button" class="ghost" data-buy="full">Купить</button></div></div></div>
+          <div class="pkg-cards" id="pdPkgCards"><article class="pkgc "><b>Эскизный проект</b><strong>128&nbsp;000&nbsp;₽</strong><small>рассрочка 0%: 6 × 21&nbsp;000&nbsp;₽</small><ul><li class="yes">Планы этажей</li><li class="yes">Фасады и разрезы</li><li class="no">Конструктивные решения</li><li class="no">Спецификации материалов</li><li class="no">Инженерные системы</li></ul><button type="button" class="ghost" data-buy="sketch">Купить</button></article><article class="pkgc rec"><em>Рекомендуем</em><b>Рабочий проект</b><strong>320&nbsp;000&nbsp;₽</strong><small>рассрочка 0%: 6 × 53&nbsp;000&nbsp;₽</small><ul><li class="yes">Планы этажей</li><li class="yes">Фасады и разрезы</li><li class="yes">Конструктивные решения</li><li class="yes">Спецификации материалов</li><li class="no">Инженерные системы</li></ul><button type="button" class="primary" data-buy="work">Купить</button></article><article class="pkgc "><b>Полный комплект</b><strong>464&nbsp;000&nbsp;₽</strong><small>рассрочка 0%: 6 × 77&nbsp;000&nbsp;₽</small><ul><li class="yes">Планы этажей</li><li class="yes">Фасады и разрезы</li><li class="yes">Конструктивные решения</li><li class="yes">Спецификации материалов</li><li class="yes">Инженерные системы</li></ul><button type="button" class="ghost" data-buy="full">Купить</button></article></div>
           <p class="pkg-free"><button type="button" id="pdFreePdf">Скачать ознакомительный PDF бесплатно →︎</button></p>
-          <div class="pkg-extra" id="pdExtra"></div>
+          <div class="pkg-extra" id="pdExtra"><span>Дальше по проекту</span><button type="button" data-x="adapt"><b>Адаптация под участок</b><em>от&nbsp;45&nbsp;000&nbsp;₽</em><i>↗︎</i></button><button type="button" data-x="calc"><b>Строительство дома</b><em>от&nbsp;11,9&nbsp;млн&nbsp;₽ · ≈ 68&nbsp;000&nbsp;₽/мес в ипотеку</em><i>↗︎</i></button></div>
         </section>
         <section class="pd-related section-dark-soft">
           <header class="section-heading">
             <span>СРАВНИТЬ ВАРИАНТЫ</span>
             <h2>Другой характер.<br />Та же точность.</h2>
           </header>
-          <div class="related-grid" id="pdRelated"></div>
+          <div class="related-grid" id="pdRelated"><a class="related-card" href="project-sever.html" data-project="Север"><img src="assets/projects/sever/hero.webp" srcset="assets/projects/sever/hero-sm.webp 800w, assets/projects/sever/hero.webp 1600w" sizes="(max-width:760px) 92vw, 40vw" alt="Проект Север"><div><span>Двухэтажный дом</span><h3>Север</h3></div></a><a class="related-card" href="project-sad.html" data-project="Сад"><img src="assets/projects/sad/hero.webp" srcset="assets/projects/sad/hero-sm.webp 800w, assets/projects/sad/hero.webp 1600w" sizes="(max-width:760px) 92vw, 40vw" alt="Проект Сад"><div><span>Дом с внутренним садом</span><h3>Сад</h3></div></a></div>
         </section>
-        <div data-footer="project"></div>
+        <div data-footer="project"><footer class="site-footer"><div class="footer-top"><div class="footer-brand"><b>HBTECH</b><p>Готовые проекты, индивидуальная архитектура, адаптация и строительство загородных домов одной командой.</p></div><div class="footer-cta"><span>Понравился этот дом</span><h2>Купить проект</h2><button class="primary" type="button" data-lead="buy">Купить проект</button></div></div><div class="footer-extra"><span>Можно добавить</span><button data-lead="adapt">Адаптация проекта</button><a class="fl" href="calc.html" data-view="calc">Расчёт строительства</a><button data-lead="consult">Ипотека и рассрочка</button><a class="fl" href="projects.html" data-view="projects">Сравнить проекты</a></div><div class="footer-grid"><div class="footer-col"><b>Контакты</b><a href="tel:+74951201705">+7 (495) 120-17-05</a><a href="mailto:hello@hbtech.ru">hello@hbtech.ru</a><a href="https://wa.me/74951201705" target="_blank" rel="noopener">WhatsApp</a><a href="https://t.me/hbtech_demo" target="_blank" rel="noopener">Telegram</a><a href="https://max.ru/hbtech_demo" target="_blank" rel="noopener">MAX</a><span>Москва и Московская область</span><span>Пн–Пт · 09:00–19:00</span></div><div class="footer-col"><b>Продукты</b><a class="fl" href="projects.html" data-view="projects">Готовые проекты</a><a class="fl" href="custom.html" data-view="architecture">Индивидуальный проект</a><button data-lead="adapt">Адаптация</button><button data-lead="build">Строительство</button></div><div class="footer-col"><b>Компания</b><a class="fl" href="about.html" data-view="experience">Опыт и объекты</a><a class="fl" href="tech.html" data-view="technology">Технологии</a><a class="fl" href="materials.html" data-view="materials">Материалы</a><a class="fl" href="build.html" data-view="process">Как работаем</a></div><div class="footer-col"><b>Документы</b><button data-legal="privacy">Конфиденциальность</button><button data-legal="offer">Условия работы</button><button data-legal="details">Реквизиты</button></div></div><div class="footer-bottom"><span>© 2026 HBTECH</span><span>Проекты и строительство частных домов</span></div></footer></div>
       </div>
     </section>
     <div class="compare-dock" id="compareDock">

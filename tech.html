@@ -20,22 +20,21 @@
     <link rel="canonical" href="https://amigoo7g.github.io/hbtech/tech.html" />
     <link rel="icon" type="image/svg+xml" href="assets/hbtech-logo.svg" />
     <link rel="stylesheet" href="styles.css" />
-  </head>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HomeAndConstructionBusiness", "name": "HBTECH", "url": "https://amigoo7g.github.io/hbtech/", "logo": "https://amigoo7g.github.io/hbtech/assets/hbtech-logo.svg", "image": "https://amigoo7g.github.io/hbtech/assets/og-cover.jpg", "telephone": "+7 (495) 120-17-05", "email": "hello@hbtech.ru", "areaServed": "Москва и Московская область", "address": {"@type": "PostalAddress", "addressLocality": "Москва", "addressCountry": "RU"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://amigoo7g.github.io/hbtech/"}, {"@type": "ListItem", "position": 2, "name": "Технологии", "item": "https://amigoo7g.github.io/hbtech/tech.html"}]}</script>
+    </head>
   <body data-page="technology">
     <header class="site-nav" id="siteNav">
-      <button
-        class="nav-brand"
-        type="button"
-        data-view="home"
-        aria-label="HBTECH — на главную"
-      >
+      <a
+        class="nav-brand" 
+        aria-label="HBTECH — на главную" href="index.html" data-view="home">
         <img src="assets/hbtech-logo.svg" alt="" />
-      </button>
+      </a>
       <nav class="nav-links" aria-label="Основная навигация">
-        <button type="button" data-view="projects">Проекты</button
-        ><button type="button" data-view="process">Строительство</button
-        ><button type="button" data-view="architecture">Индивидуальный дом</button
-        ><button type="button" data-view="experience">О компании</button>
+        <a href="projects.html" data-view="projects">Проекты</a
+        ><a href="build.html" data-view="process">Строительство</a
+        ><a href="custom.html" data-view="architecture">Индивидуальный дом</a
+        ><a href="about.html" data-view="experience">О компании</a>
       </nav>
       <a class="nav-phone" id="navPhone" href="#"></a><button class="nav-cta" type="button" data-lead="project">
         Получить проект</button
@@ -51,10 +50,10 @@
     <aside class="menu-drawer" aria-hidden="true">
       <div class="drawer-brand">HBTECH</div>
       <nav aria-label="Мобильная навигация">
-        <button type="button" data-view="projects"><b>01</b>Проекты</button
-        ><button type="button" data-view="process"><b>02</b>Строительство</button
-        ><button type="button" data-view="architecture"><b>03</b>Индивидуальный дом</button
-        ><button type="button" data-view="experience"><b>04</b>О компании</button>
+        <a href="projects.html" data-view="projects"><b>01</b>Проекты</a
+        ><a href="build.html" data-view="process"><b>02</b>Строительство</a
+        ><a href="custom.html" data-view="architecture"><b>03</b>Индивидуальный дом</a
+        ><a href="about.html" data-view="experience"><b>04</b>О компании</a>
       </nav>
       <button class="primary" type="button" data-lead="project">
         Получить проект
@@ -82,7 +81,7 @@
             <p>Наведение показывает роль каждой части дома.</p>
           </header>
           <div class="system-console reveal">
-            <div class="system-list" id="systemList"></div>
+            <div class="system-list" id="systemList"><button type="button" class="active" data-system="0"><b>АР</b><span>Архитектура</span></button><button type="button" class="" data-system="1"><b>КР</b><span>Конструктив</span></button><button type="button" class="" data-system="2"><b>ОВ</b><span>Климат</span></button><button type="button" class="" data-system="3"><b>ВК</b><span>Вода</span></button><button type="button" class="" data-system="4"><b>ЭОМ</b><span>Электрика</span></button></div>
             <div class="system-display">
               <span id="systemCode">АР</span>
               <h3 id="systemTitle">Архитектура</h3>
@@ -122,9 +121,9 @@
             <span>ЧТО ПОЛУЧАЕТ КЛИЕНТ</span>
             <h2>Комплект для проекта,<br />стройки и контроля.</h2>
           </header>
-          <div class="doc-grid" id="docGrid"></div>
+          <div class="doc-grid" id="docGrid"><article class="reveal"><b>АР</b><h3>Архитектурные решения</h3><p>Планы, фасады, разрезы, экспликации.</p></article><article class="reveal"><b>КР</b><h3>Конструктивные решения</h3><p>Расчёты, схемы, узлы и ведомости.</p></article><article class="reveal"><b>ИОС</b><h3>Инженерные системы</h3><p>Отопление, вода, электрика, вентиляция.</p></article><article class="reveal"><b>СП</b><h3>Спецификации</h3><p>Материалы, оборудование и объёмы.</p></article></div>
         </section>
-        <div data-footer="technology"></div>
+        <div data-footer="technology"><footer class="site-footer"><div class="footer-top"><div class="footer-brand"><b>HBTECH</b><p>Готовые проекты, индивидуальная архитектура, адаптация и строительство загородных домов одной командой.</p></div><div class="footer-cta"><span>Есть проект и участок</span><h2>Заказать адаптацию</h2><button class="primary" type="button" data-lead="adapt">Заказать адаптацию</button></div></div><div class="footer-extra"><span>Можно добавить</span><button data-lead="adapt">Адаптация проекта</button><a class="fl" href="calc.html" data-view="calc">Расчёт строительства</a><button data-lead="consult">Ипотека и рассрочка</button><a class="fl" href="projects.html" data-view="projects">Сравнить проекты</a></div><div class="footer-grid"><div class="footer-col"><b>Контакты</b><a href="tel:+74951201705">+7 (495) 120-17-05</a><a href="mailto:hello@hbtech.ru">hello@hbtech.ru</a><a href="https://wa.me/74951201705" target="_blank" rel="noopener">WhatsApp</a><a href="https://t.me/hbtech_demo" target="_blank" rel="noopener">Telegram</a><a href="https://max.ru/hbtech_demo" target="_blank" rel="noopener">MAX</a><span>Москва и Московская область</span><span>Пн–Пт · 09:00–19:00</span></div><div class="footer-col"><b>Продукты</b><a class="fl" href="projects.html" data-view="projects">Готовые проекты</a><a class="fl" href="custom.html" data-view="architecture">Индивидуальный проект</a><button data-lead="adapt">Адаптация</button><button data-lead="build">Строительство</button></div><div class="footer-col"><b>Компания</b><a class="fl" href="about.html" data-view="experience">Опыт и объекты</a><a class="fl" href="tech.html" data-view="technology">Технологии</a><a class="fl" href="materials.html" data-view="materials">Материалы</a><a class="fl" href="build.html" data-view="process">Как работаем</a></div><div class="footer-col"><b>Документы</b><button data-legal="privacy">Конфиденциальность</button><button data-legal="offer">Условия работы</button><button data-legal="details">Реквизиты</button></div></div><div class="footer-bottom"><span>© 2026 HBTECH</span><span>Проекты и строительство частных домов</span></div></footer></div>
       </section>
     </main>
     <div class="msg-fab" id="msgFab">
