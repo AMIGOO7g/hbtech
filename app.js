@@ -1007,7 +1007,10 @@
     projectHash = projectEntries.find(([, p]) => "project-" + p.slug === hash);
   if (projectHash && PAGE !== "project") location.replace(projectUrl(projectHash[0]));
   else if (hash && PAGES[hash] && hash !== PAGE && PAGE === "home") location.replace(PAGES[hash]);
-  if (PAGE === "project") renderProject(document.body.dataset.project);
+  if (PAGE === "project") {
+    renderProject(document.body.dataset.project);
+    qsa(".nav-links [data-view]").forEach((b) => b.classList.toggle("active", b.dataset.view === "projects"));
+  }
   else openView(PAGE, false);
   updateCompareButtons();
   observeReveals(qs(".view.active"));
