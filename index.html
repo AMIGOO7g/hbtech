@@ -502,6 +502,7 @@
     </div>
 
     <section class="project-detail" id="projectDetail" aria-hidden="true">
+      <div class="pd-sticky" id="pdSticky" aria-hidden="true"><b id="pdStickyName"></b><span id="pdStickyPrice"></span><button class="primary" type="button" id="pdStickyBuy">Купить проект</button></div>
       <div class="project-scroll">
         <button
           class="round-close"
@@ -517,6 +518,7 @@
             <span id="pdType"></span>
             <h1 id="pdTitle"></h1>
             <p id="pdLead"></p>
+            <p class="pd-factline" id="pdFactLine"></p>
             <div>
               <button class="primary" type="button" id="pdBuy">Купить проект</button><button class="ghost" type="button" id="pdPdf">
                 Получить PDF</button
@@ -527,27 +529,21 @@
           </div>
           <figure class="pd-hero-frame"><img id="pdHeroImg" alt="" /></figure>
         </section>
-        <section class="pd-facts" id="pdFacts"></section>
-        <section class="pd-intro section-dark">
+        <section class="pd-gallery section-dark-soft">
           <header class="section-heading">
             <span>АРХИТЕКТУРА ПРОЕКТА</span>
             <h2 id="pdStatement"></h2>
             <p id="pdDescription"></p>
           </header>
-        </section>
-        <section class="pd-gallery section-dark-soft">
-          <header class="section-heading">
-            <span>ДОМ СО ВСЕХ СТОРОН</span>
-            <h2>Архитектура<br />в деталях.</h2>
-          </header>
           <div class="gallery-grid" id="pdGallery"></div>
         </section>
         <section class="pd-plans section-dark">
           <header class="section-heading">
-            <span>ПЛАНЫ И ФАСАДЫ</span>
-            <h2>Логика дома<br />на одном экране.</h2>
+            <span>ПЛАНИРОВКА</span>
+            <h2>Планы этажей.</h2>
           </header>
-          <div class="plans-grid" id="pdPlans"></div>
+          <div class="plan-tabs seg" id="planTabs"></div>
+          <div class="plan-view" id="pdPlans"></div>
         </section>
         <section class="pd-packages section-dark-soft">
           <header class="section-heading">
@@ -555,21 +551,9 @@
             <h2>Что входит в проект.</h2>
           </header>
           <div class="pkg-compare" id="pdPackages"></div>
+          <div class="pkg-cards" id="pdPkgCards"></div>
           <p class="pkg-free"><button type="button" id="pdFreePdf">Скачать ознакомительный PDF бесплатно →︎</button></p>
           <div class="pkg-extra" id="pdExtra"></div>
-        </section>
-        <section class="pd-adapt section-dark">
-          <header class="section-heading">
-            <span>АДАПТАЦИЯ</span>
-            <h2>Проект под ваш<br />участок и задачи.</h2>
-          </header>
-          <div class="adapt-layout">
-            <div class="adapt-options" id="adaptOptions"></div>
-            <figure>
-              <img id="adaptImage" alt="" />
-              <figcaption id="adaptCaption"></figcaption>
-            </figure>
-          </div>
         </section>
         <section class="pd-related section-dark-soft">
           <header class="section-heading">

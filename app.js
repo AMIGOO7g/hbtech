@@ -1,4 +1,6 @@
 (() => {
+  const SS = (src, sizes = "(max-width:760px) 92vw, 40vw") =>
+    /\.webp$/.test(src) && !/-sm\.webp$/.test(src) ? `srcset="${src.replace(/\.webp$/, "-sm.webp")} 800w, ${src} 1600w" sizes="${sizes}"` : "";
   const D = window.HBTECH_DATA,
     qs = (s, r = document) => r.querySelector(s),
     qsa = (s, r = document) => [...r.querySelectorAll(s)],
@@ -164,7 +166,7 @@
       ? list
           .map(
             ([name, p]) =>
-              `<article class="project-card" data-project="${name}"><img src="${p.images[0]}" alt="Проект ${name}" loading="lazy">${p.badge ? `<span class="project-badge badge-${{"Хит": "hit", "Новинка": "new", "Акция": "sale"}[p.badge] || "hit"}">${p.badge === "Акция" && p.oldPrice ? `Акция −${Math.round((1 - num(p.projectPrice) / num(p.oldPrice)) * 100)}%` : p.badge}</span>` : ""}<div class="project-card-actions"><button class="circle-action" type="button" data-compare="${name}" aria-label="Добавить ${name} к сравнению">+</button></div><div class="project-card-content"><small>${p.type}</small><h3>${name}</h3><div class="project-card-meta"><span>${p.area}</span><span>${p.floors}</span><span>${p.bedrooms}</span></div><div class="project-card-price">${p.oldPrice ? `<s>${p.oldPrice}</s>` : ""}<b class="${p.oldPrice ? "promo" : ""}">${p.projectPrice}</b><span>стройка ${p.buildPrice}</span></div></div></article>`,
+              `<article class="project-card" data-project="${name}"><img src="${p.images[0]}" ${SS(p.images[0])} alt="Проект ${name}" loading="lazy">${p.badge ? `<span class="project-badge badge-${{"Хит": "hit", "Новинка": "new", "Акция": "sale"}[p.badge] || "hit"}">${p.badge === "Акция" && p.oldPrice ? `Акция −${Math.round((1 - num(p.projectPrice) / num(p.oldPrice)) * 100)}%` : p.badge}</span>` : ""}<div class="project-card-actions"><button class="circle-action" type="button" data-compare="${name}" aria-label="Добавить ${name} к сравнению">+</button></div><div class="project-card-content"><small>${p.type}</small><h3>${name}</h3><div class="project-card-meta"><span>${p.area}</span><span>${p.floors}</span><span>${p.bedrooms}</span></div><div class="project-card-price">${p.oldPrice ? `<s>${p.oldPrice}</s>` : ""}<b class="${p.oldPrice ? "promo" : ""}">${p.projectPrice}</b><span>стройка ${p.buildPrice}</span></div></div></article>`,
           )
           .join("")
       : `<div class="catalog-empty">Под эти условия проектов нет. <button type="button" id="catalogReset">Сбросить фильтры</button></div>`;
@@ -298,7 +300,7 @@
   qs("#processList").innerHTML = D.process
     .map(
       (s, i) =>
-        `<article class="process-step reveal" data-stage="${i}"><b>${s.no}</b><h3>${s.title}</h3><p>${s.text}</p><div class="process-result"><span>Результат</span><strong>${s.result}</strong></div><div class="process-meta"><span><b>Срок</b>${s.timing}</span><span><b>Стоимость</b>${s.price}</span><span><b>Ответственность</b>${s.responsibility}</span></div></article>`,
+        `<article class="process-step reveal" data-stage="${i}"><b>${s.no}</b><h3>${s.title}</h3><p>${s.text}</p><div class="process-meta"><span><b>Срок</b>${s.timing}</span><span><b>Стоимость</b>${s.price}</span></div><details class="step-more"><summary>Подробнее</summary><div class="faq-a"><div class="process-result"><span>Результат</span><strong>${s.result}</strong></div><div class="process-result"><span>Ответственный</span><strong>${s.responsibility}</strong></div></div></details></article>`,
     )
     .join("");
   qs("#faqList").innerHTML = D.faq.map((f) => `<details><summary>${f.q}<i>+</i></summary><div class="faq-a"><p>${f.a}</p></div></details>`).join("");
@@ -344,7 +346,7 @@
     galleryMeta = meta;
     galleryPosition = start;
     qs("#viewerStage").innerHTML = items.map((src, i) => `<img src="${src}" alt="${meta.title}, изображение ${i + 1}" class="${fitClass(src)}">`).join("");
-    qs("#viewerThumbs").innerHTML = items.length > 1 ? items.map((src, i) => `<button type="button" aria-label="Изображение ${i + 1}"><img src="${src}" alt=""></button>`).join("") : "";
+    qs("#viewerThumbs").innerHTML = items.length > 1 ? items.map((src, i) => `<button type="button" aria-label="Изображение ${i + 1}"><img src="${src.replace(/\.webp$/, "-sm.webp")}" alt=""></button>`).join("") : "";
     qsa("#viewerThumbs button").forEach((b, i) => (b.onclick = () => { galleryPosition = i; renderGallery(); }));
     gallerySheet.classList.toggle("single", items.length < 2);
     const gl = qs("#galleryLink");
@@ -390,7 +392,7 @@
   qs("#bankList").innerHTML = D.banks.map((b) => `<span>${b}</span>`).join("");
   qs("#officeAddr").textContent = D.office;
   qs("#companyFaq").innerHTML = D.companyFaq.map(([q, a]) => `<details><summary>${q}<i>+</i></summary><div class="faq-a"><p>${a}</p></div></details>`).join("");
-  qsa(".faq-list details").forEach((d) => {
+  qsa(".faq-list details, .step-more").forEach((d) => {
     const sum = d.querySelector("summary"), body = d.querySelector(".faq-a");
     sum.addEventListener("click", (e) => {
       e.preventDefault();
@@ -455,6 +457,11 @@
   function makeFigure(src, alt) {
     const f = document.createElement("figure"),
       img = document.createElement("img");
+    if (/\.webp$/.test(src) && !/-sm\.webp$/.test(src)) {
+      img.srcset = `${src.replace(/\.webp$/, "-sm.webp")} 800w, ${src} 1600w`;
+      img.sizes = "(max-width:760px) 92vw, 50vw";
+    }
+    img.loading = "lazy";
     img.src = src;
     img.alt = alt;
     f.append(img);
@@ -465,6 +472,7 @@
   function heroProgress() {
     const hero = qs("#pdHero");
     if (!hero) return;
+    qs("#pdSticky").classList.toggle("show", projectScroll.scrollTop > hero.offsetHeight * 0.85);
     const t = Math.min(1, Math.max(0, projectScroll.scrollTop / (window.innerHeight * 0.55)));
     hero.style.setProperty("--p", t.toFixed(3));
   }
@@ -526,21 +534,18 @@
     qs("#pdType").textContent = p.type;
     qs("#pdTitle").textContent = name;
     scrambleWord(qs("#pdWord"), name);
+    qs("#pdHeroImg").srcset = `${p.images[0].replace(/\.webp$/, "-sm.webp")} 800w, ${p.images[0]} 1600w`;
+    qs("#pdHeroImg").sizes = "100vw";
     qs("#pdHeroImg").src = p.images[0];
     qs("#pdHeroImg").alt = `Проект ${name}`;
     heroProgress();
     qs("#pdLead").textContent = p.lead;
     qs("#pdStatement").textContent = p.statement;
     qs("#pdDescription").textContent = p.description;
-    const facts = [
-      [p.area, "Площадь"],
-      [p.floors, "Этажность"],
-      [p.bedrooms, "Спальни"],
-      [p.projectPrice, "Стоимость проекта"],
-    ];
-    qs("#pdFacts").innerHTML = facts
-      .map((x) => `<article><b>${x[0]}</b><span>${x[1]}</span></article>`)
-      .join("");
+    qs("#pdFactLine").innerHTML = [[p.area, "площадь"], [p.floors, "этажность"], [p.bedrooms, "спальни"], [p.projectPrice, "проект"]].map(([v, l]) => `<span><b>${v}</b><small>${l}</small></span>`).join("");
+    qs("#pdStickyName").textContent = `Проект «${name}»`;
+    qs("#pdStickyPrice").textContent = `${p.projectPrice} · стройка ${p.buildPrice}`;
+    qs("#pdStickyBuy").onclick = () => openLead("buy", name);
     qs("#pdGallery").replaceChildren(
       ...p.images.map((src, i) =>
         makeFigure(src, `Проект ${name}, вид ${i + 1}`),
@@ -559,84 +564,40 @@
         if (e.key === "Enter" || e.key === " ") figure.click();
       };
     });
-    qs("#pdPlans").replaceChildren(
-      ...p.plans.map((src, i) =>
-        makeFigure(src, `Проект ${name}, план ${i + 1}`),
-      ),
-    );
+    const showPlan = (i, first) => {
+      qsa("#planTabs button").forEach((b, n) => b.classList.toggle("on", n === i));
+      const box = qs("#pdPlans");
+      const put = () => {
+        const f = makeFigure(p.plans[i], `Проект ${name}, план ${i + 1} этажа`);
+        const im = f.querySelector("img");
+        im.loading = "eager";
+        box.replaceChildren(f);
+        const show = () => box.classList.remove("fade");
+        im.complete ? requestAnimationFrame(show) : (im.onload = show);
+      };
+      if (first) return put();
+      box.classList.add("fade");
+      setTimeout(put, 380);
+    };
+    qs("#planTabs").innerHTML = p.plans.map((_, i) => `<button type="button">${i + 1} этаж</button>`).join("");
+    qs("#planTabs").hidden = p.plans.length < 2;
+    qsa("#planTabs button").forEach((b, i) => (b.onclick = () => showPlan(i)));
+    showPlan(0, true);
     const base = priceNum(p.projectPrice);
-    qs("#pdPackages").innerHTML = `<div class="pkg-head"><span></span>${D.packages.map((k, ci) => `<div data-c="${ci}">${k.id === "work" ? '<em class="pkg-rec">Рекомендуем</em>' : ""}<b>${k.title}</b><strong>${rub(base * k.k).toLocaleString("ru-RU")} ₽</strong><small>или 6 × ${rub((base * k.k) / 6).toLocaleString("ru-RU")} ₽ без %</small></div>`).join("")}</div>${D.packageRows.map((r, i) => `<div class="pkg-row"><span>${r}</span>${D.packages.map((k, ci) => `<i data-c="${ci}" class="${k.f[i] ? "yes" : "no"}">${k.f[i] ? "<span>✓</span>" : "—"}</i>`).join("")}</div>`).join("")}<div class="pkg-row pkg-buy"><span></span>${D.packages.map((k, ci) => `<div data-c="${ci}"><button type="button" class="${k.id === "work" ? "primary" : "ghost"}" data-buy="${k.id}">Купить</button></div>`).join("")}</div>`;
+    qs("#pdPackages").innerHTML = `<div class="pkg-head"><span></span>${D.packages.map((k, ci) => `<div data-c="${ci}">${k.id === "work" ? '<em class="pkg-rec">Рекомендуем</em>' : ""}<b>${k.title}</b><strong>${rub(base * k.k).toLocaleString("ru-RU")} ₽</strong><small>рассрочка 0%: 6 платежей по ${rub((base * k.k) / 6).toLocaleString("ru-RU")} ₽</small></div>`).join("")}</div>${D.packageRows.map((r, i) => `<div class="pkg-row"><span>${r}</span>${D.packages.map((k, ci) => `<i data-c="${ci}" class="${k.f[i] ? "yes" : "no"}">${k.f[i] ? "<span>✓</span>" : "—"}</i>`).join("")}</div>`).join("")}<div class="pkg-row pkg-buy"><span></span>${D.packages.map((k, ci) => `<div data-c="${ci}"><button type="button" class="${k.id === "work" ? "primary" : "ghost"}" data-buy="${k.id}">Купить</button></div>`).join("")}</div>`;
+    qs("#pdPkgCards").innerHTML = D.packages.map((k) => `<article class="pkgc ${k.id === "work" ? "rec" : ""}">${k.id === "work" ? "<em>Рекомендуем</em>" : ""}<b>${k.title}</b><strong>${rub(base * k.k).toLocaleString("ru-RU")} ₽</strong><small>рассрочка 0%: 6 × ${rub((base * k.k) / 6).toLocaleString("ru-RU")} ₽</small><ul>${D.packageRows.map((r, i) => `<li class="${k.f[i] ? "yes" : "no"}">${r}</li>`).join("")}</ul><button type="button" class="${k.id === "work" ? "primary" : "ghost"}" data-buy="${k.id}">Купить</button></article>`).join("");
     const pc = qs("#pdPackages");
     pc.onmouseover = (ev) => { const c = ev.target.closest("[data-c]"); pc.dataset.hover = c ? c.dataset.c : ""; };
     pc.onmouseleave = () => (pc.dataset.hover = "");
-    qsa("#pdPackages [data-buy]").forEach((b) => (b.onclick = () => { leadPackage = b.dataset.buy; openLead("buy", name); }));
+    qsa("#pdPackages [data-buy], #pdPkgCards [data-buy]").forEach((b) => (b.onclick = () => { leadPackage = b.dataset.buy; openLead("buy", name); }));
     qs("#pdFreePdf").onclick = () => openLead("pdf", name);
-    qs("#pdExtra").innerHTML = `<span>Дополнительно к проекту</span><button type="button" data-x="adapt"><b>Адаптация под участок</b><em>от 45 000 ₽</em><i>↗︎</i></button><button type="button" data-x="calc"><b>Строительство дома</b><em>${p.buildPrice} · ≈ ${monthly(priceNum(p.buildPrice) * (/млн/.test(p.buildPrice) ? 100000 : 1)).toLocaleString("ru-RU")} ₽/мес в ипотеку</em><i>↗︎</i></button>`;
+    qs("#pdExtra").innerHTML = `<span>Дальше по проекту</span><button type="button" data-x="adapt"><b>Адаптация под участок</b><em>от 45 000 ₽</em><i>↗︎</i></button><button type="button" data-x="calc"><b>Строительство дома</b><em>${p.buildPrice} · ≈ ${monthly(priceNum(p.buildPrice) * (/млн/.test(p.buildPrice) ? 100000 : 1)).toLocaleString("ru-RU")} ₽/мес в ипотеку</em><i>↗︎</i></button>`;
     qs("#pdExtra").onclick = (ev) => { const x = ev.target.closest("[data-x]"); if (!x) return; if (x.dataset.x === "adapt") return openLead("adapt", name); returnProject = name; openView("calc"); const cb = qs("#calcBack"); cb.hidden = false; cb.textContent = `←︎ Вернуться к проекту «${name}»`; };
-    const adapt = [
-      {
-        title: "Посадка на участок",
-        summary: "Находим точное положение дома.",
-        text: "Проверяем отступы, подъезд, солнце, рельеф, видовые направления и точки подключения сетей.",
-        result:
-          "Вы получаете схему посадки с привязками, отметками и рекомендациями по участку.",
-        image: p.images[0],
-      },
-      {
-        title: "Планировка",
-        summary: "Настраиваем маршруты под вашу семью.",
-        text: "Меняем состав и связи помещений, хранение, входную группу и хозяйственные зоны, не разрушая логику дома.",
-        result:
-          "Вы получаете согласованные планы с площадями и расстановкой мебели.",
-        image: p.plans[0],
-      },
-      {
-        title: "Конструктив",
-        summary: "Привязываем несущую схему к условиям участка.",
-        text: "Учитываем геологию, снеговые нагрузки и выбранные материалы стен, перекрытий и кровли.",
-        result:
-          "Вы получаете расчётную схему и рабочие решения для фундамента и конструкций.",
-        image: p.images[1] || p.images[0],
-      },
-      {
-        title: "Инженерия",
-        summary: "Согласуем мощности и оборудование.",
-        text: "Определяем отопление, вентиляцию, воду, электрику и места оборудования до начала работ.",
-        result:
-          "Вы получаете согласованные инженерные схемы и исходные данные для монтажа.",
-        image: p.plans[1] || p.plans[0],
-      },
-    ];
-    qs("#adaptOptions").innerHTML = adapt
-      .map(
-        (a, i) =>
-          `<button type="button" data-adapt="${i}" class="${i === 0 ? "active" : ""}"><span><b>${a.title}</b><small>${a.summary}</small><em>${a.text}<strong>${a.result}</strong></em></span><i aria-hidden="true">+</i></button>`,
-      )
-      .join("");
-    const setAdapt = (i) => {
-      qsa("[data-adapt]").forEach((b, n) =>
-        b.classList.toggle("active", n === i),
-      );
-      qs("#adaptImage").style.opacity = "0";
-      setTimeout(() => {
-        qs("#adaptImage").src = adapt[i].image;
-        qs("#adaptImage").alt = adapt[i].title;
-        qs("#adaptCaption").textContent = adapt[i].title + " · " + name;
-        const im = qs("#adaptImage");
-        const show = () => (im.style.opacity = "1");
-        im.complete ? requestAnimationFrame(show) : (im.onload = show);
-      }, 450);
-    };
-    qs("#adaptOptions").onclick = (e) => {
-      const b = e.target.closest("[data-adapt]");
-      if (b) setAdapt(+b.dataset.adapt);
-    };
-    setAdapt(0);
     const related = projectEntries.filter(([n]) => n !== name).slice(0, 2);
     qs("#pdRelated").innerHTML = related
       .map(
         ([n, r]) =>
-          `<button class="related-card" type="button" data-project="${n}"><img src="${r.images[0]}" alt="Проект ${n}"><div><span>${r.type}</span><h3>${n}</h3></div></button>`,
+          `<button class="related-card" type="button" data-project="${n}"><img src="${r.images[0]}" ${SS(r.images[0])} alt="Проект ${n}"><div><span>${r.type}</span><h3>${n}</h3></div></button>`,
       )
       .join("");
     qs("#pdPdf").onclick = () => openLead("pdf", name);
@@ -721,8 +682,8 @@
     const val = (n, k) => (k === "_m" ? `≈ ${monthly(priceNum(D.projects[n].buildPrice) * (/млн/.test(D.projects[n].buildPrice) ? 100000 : 1)).toLocaleString("ru-RU")} ₽/мес` : D.projects[n][k]);
     const diff = qs("#diffOnly").checked;
     const n = cols.length, empty = n < 3;
-    const tpl = `grid-template-columns: minmax(150px,1fr) repeat(${n + (empty ? 1 : 0)}, minmax(0,1.4fr))`;
-    const head = `<div class="cg-row cg-head" style="${tpl}"><span></span>${cols.map((c) => `<div class="cg-card"><img src="${D.projects[c].images[0]}" alt="Проект ${c}"><b>${c}</b><em>${D.projects[c].projectPrice}</em><span><button type="button" data-open-project="${c}">Открыть ↗︎</button><button type="button" data-remove-compare="${c}">Убрать</button></span></div>`).join("")}${empty ? `<button type="button" class="cg-add" id="cgAdd"><i>+</i>Добавить проект</button>` : ""}</div>`;
+    const tpl = `--n:${n + (empty ? 1 : 0)};grid-template-columns: minmax(150px,1fr) repeat(${n + (empty ? 1 : 0)}, minmax(0,1.4fr))`;
+    const head = `<div class="cg-row cg-head" style="${tpl}"><span></span>${cols.map((c) => `<div class="cg-card"><img src="${D.projects[c].images[0]}" ${SS(D.projects[c].images[0], "300px")} alt="Проект ${c}"><b>${c}</b><em>${D.projects[c].projectPrice}</em><span><button type="button" data-open-project="${c}">Открыть ↗︎</button><button type="button" data-remove-compare="${c}">Убрать</button></span></div>`).join("")}${empty ? `<button type="button" class="cg-add" id="cgAdd"><i>+</i>Добавить проект</button>` : ""}</div>`;
     const body = groups.map(([g, rows]) => {
       const rr = rows.filter(([, k]) => !diff || n < 2 || new Set(cols.map((c) => val(c, k))).size > 1);
       if (!rr.length) return "";
@@ -958,10 +919,13 @@
           const el = entry.target,
             target = Number(el.dataset.count) || 0;
           el.dataset.counted = "true";
-          const started = performance.now(),
+          el.style.minWidth = target.toLocaleString("ru-RU").length + "ch";
+          const sibs = qsa("[data-count]", el.parentElement.parentElement);
+          const delay = Math.max(0, sibs.indexOf(el)) * 260;
+          const started = performance.now() + delay,
             duration = 1150;
           const tick = (now) => {
-            const p = Math.min(1, (now - started) / duration);
+            const p = Math.max(0, Math.min(1, (now - started) / duration));
             const eased = 1 - Math.pow(1 - p, 4);
             el.textContent = Math.round(target * eased).toLocaleString("ru-RU");
             if (p < 1) requestAnimationFrame(tick);

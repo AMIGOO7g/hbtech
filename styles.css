@@ -4226,3 +4226,129 @@ html,body,button{font-variant-emoji:text}
 }
 @media (max-width:760px){.home-grid{grid-template-rows:auto 1fr 1fr 128px!important}}
 @media (max-width:760px){.card-about .card-copy{padding-right:40px!important}.card-about strong{font-size:clamp(13px,4vw,19px)!important}}
+
+/* ===== Проект: короткая версия ===== */
+.pd-factline{margin:4px 0 16px!important;font-family:Unbounded,sans-serif;font-weight:500;font-size:clamp(14px,1.3vw,17px)!important;color:#fff!important;letter-spacing:.01em;white-space:nowrap}
+.pd-gallery .section-heading p{max-width:640px;margin:16px auto 0;color:var(--muted);line-height:1.6}
+.plan-tabs{justify-content:center;margin:-10px 0 26px}
+.plan-tabs[hidden]{display:none}
+.plan-view figure{margin:0 auto;max-width:880px;border-radius:var(--r-card);overflow:hidden;background:#f4f3ef;cursor:zoom-in}
+.plan-view img{width:100%;height:auto;max-height:72vh;object-fit:contain;display:block}
+.pd-sticky{position:fixed;z-index:6;top:16px;left:50%;transform:translate(-50%,-140%);display:flex;align-items:center;gap:18px;padding:8px 8px 8px 22px;border-radius:999px;background:rgba(18,15,24,.78);backdrop-filter:blur(16px);border:1px solid var(--line-strong);box-shadow:0 20px 60px rgba(0,0,0,.45);transition:transform .6s var(--ease);white-space:nowrap}
+.pd-sticky.show{transform:translate(-50%,0)}
+.pd-sticky b{font-family:Unbounded,sans-serif;font-weight:500;font-size:15px}
+.pd-sticky span{color:var(--muted);font-size:13px}
+.pd-sticky .primary{padding:11px 18px}
+/* ===== Строительство: подробности по запросу ===== */
+.step-more{margin-top:12px}
+.step-more summary{list-style:none;cursor:pointer;font-size:14px;color:var(--plum2);display:inline-flex;gap:8px;align-items:center}
+.step-more summary::-webkit-details-marker{display:none}
+.step-more summary::after{content:"+";transition:transform .4s var(--ease)}
+.step-more[open] summary::after{transform:rotate(45deg)}
+.process-meta{grid-template-columns:1fr 1fr!important}
+@media (max-width:760px){
+  .pd-factline{white-space:normal;font-size:13px!important}
+  .pd-sticky{left:12px;right:70px;transform:translateY(-140%);padding:6px 6px 6px 14px;gap:10px}
+  .pd-sticky.show{transform:none}
+  .pd-sticky span{display:none}
+  .pd-sticky b{font-size:12px;overflow:hidden;text-overflow:ellipsis}
+  .pd-sticky .primary{padding:9px 12px;font-size:13px}
+  .process-meta{grid-template-columns:1fr 1fr!important}
+}
+
+/* ===== v58: правки по скриншотам ===== */
+/* Подробнее — плавно */
+.step-more .faq-a{height:0;overflow:hidden;transition:height .5s var(--ease)}
+.step-more .process-result:first-child{margin-top:10px}
+.step-more.on summary::after{transform:rotate(45deg)}
+.step-more[open]:not(.on) summary::after{transform:none}
+/* Факты проекта: 4 колонки по одной оси */
+.pd-factline{display:flex!important;justify-content:center;gap:0;margin:10px auto 22px!important;white-space:normal!important}
+.pd-factline span{display:flex;flex-direction:column;align-items:center;gap:4px;padding:0 clamp(14px,2vw,28px)}
+.pd-factline span+span{border-left:1px solid var(--line-strong)}
+.pd-factline b{font-family:Unbounded,sans-serif;font-weight:500;font-size:clamp(15px,1.4vw,19px);white-space:nowrap}
+.pd-factline small{font-family:Manrope,sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+/* Планы — плавная смена */
+.plan-view{transition:opacity .38s var(--ease)}
+.plan-view.fade{opacity:0}
+/* Комплекты: цена загорается в колонке под курсором */
+.pkg-head strong{transition:color .4s var(--ease)}
+.pkg-compare[data-hover="0"] .pkg-head [data-c="0"] strong,.pkg-compare[data-hover="1"] .pkg-head [data-c="1"] strong,.pkg-compare[data-hover="2"] .pkg-head [data-c="2"] strong{color:var(--plum2)}
+.pkg-cards{display:none}
+/* Меню по центру страницы */
+@media (min-width:1101px){.nav-links{position:absolute;left:50%;transform:translateX(-50%)}}
+/* Все крупные цифры — один цвет (как «12» и «5») */
+.number-grid b,.team-roles b,.quality-grid i,.process-sticky b,.card-big{color:var(--plum2)!important;background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;-webkit-text-fill-color:currentColor!important}
+.number-grid b,.team-roles b{display:inline-block;font-variant-numeric:tabular-nums;text-align:center}
+.team-roles div{justify-content:flex-start!important}
+.team-roles b{margin-bottom:10px}
+/* Калькулятор: воздух */
+.calc-result p{line-height:1.55}
+.calc-inc{margin-top:22px!important;padding-top:20px!important}
+.calc-mort{margin:14px 0 26px!important;line-height:1.6!important}
+.calc-result .primary{margin-top:auto}
+
+@media (max-width:760px){
+  /* шапка с подложкой, чтобы не наезжала на текст */
+  .site-nav{background:rgba(12,10,16,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+  /* факты проекта 2×2 */
+  .pd-factline{display:grid!important;grid-template-columns:1fr 1fr;gap:12px 0}
+  .pd-factline span:nth-child(3){border-left:0}
+  /* комплекты карточками вместо таблицы */
+  .pkg-compare{display:none!important}
+  .pkg-cards{display:grid;gap:12px}
+  .pkgc{position:relative;display:flex;flex-direction:column;gap:6px;padding:22px;border-radius:var(--r-card);border:1px solid var(--line);background:var(--surface)}
+  .pkgc.rec{border-color:rgba(210,154,186,.6);background:rgba(150,59,114,.14)}
+  .pkgc em{font-style:normal;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--plum2)}
+  .pkgc b{font-family:Unbounded,sans-serif;font-weight:500;font-size:15px;text-transform:uppercase}
+  .pkgc strong{font-family:Unbounded,sans-serif;font-size:24px;white-space:nowrap}
+  .pkgc small{color:var(--muted);font-size:12px}
+  .pkgc ul{list-style:none;margin:12px 0 16px;padding:0;display:grid;gap:8px}
+  .pkgc li{display:flex;gap:10px;font-size:14px}
+  .pkgc li::before{content:"✓";color:var(--plum2);width:16px}
+  .pkgc li.no{color:rgba(255,255,255,.35)}
+  .pkgc li.no::before{content:"—";color:rgba(255,255,255,.3)}
+  .pkgc button{align-self:stretch}
+  /* сравнение без бокового свайпа */
+  .compare-grid{overflow:visible}
+  .cg-row{min-width:0!important;grid-template-columns:repeat(var(--n),minmax(0,1fr))!important;gap:6px 10px!important}
+  .cg-row>span{grid-column:1/-1;font-size:12px}
+  .cg-row>div{white-space:normal;font-size:13px}
+  .cg-head>span{display:none}
+  .cg-card b{font-size:15px}
+  .cg-card span{flex-direction:column;gap:6px}
+  .cg-add{min-height:110px;font-size:12px}
+  /* фильтры: аккуратные ряды */
+  .catalog-bar{flex-wrap:wrap!important;justify-content:center!important;overflow:visible!important;margin:0 0 12px!important;padding:0!important}
+  .capsule{flex-wrap:wrap;justify-content:center;border-radius:22px;width:100%}
+  .capsule-pill{display:none}
+  .capsule button.on{background:var(--plum);border-radius:999px}
+  .filters-toggle{width:100%}
+  .filters-inner{display:grid!important;gap:10px!important}
+  .filters-inner .seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .filters-inner .seg button{padding:11px 8px;font-size:13px}
+  .catalog-sort select{width:100%}
+  /* калькулятор */
+  .calc-form,.calc-result{padding:24px!important}
+  .calc-row+.calc-row{margin-top:24px}
+  .calc-result b{font-size:30px!important}
+  /* видео на всю ширину */
+  .video-story{padding:0!important;margin:0!important;width:100%!important;border-radius:0!important}
+  .video-story video{border-radius:0!important}
+  /* строительство: линия по центру точек и счётчик этапа сверху */
+  .process-list::before,.process-list::after{left:6px!important}
+  .process-sticky{display:flex!important;position:sticky!important;top:72px;z-index:4;flex-direction:row!important;align-items:center;gap:12px;margin:0 -14px 14px;padding:10px 14px;background:rgba(12,10,16,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+  .process-sticky span{display:none}
+  .process-sticky b{font-size:44px!important;line-height:1}
+  .process-sticky small{font-size:15px}
+  .process-step>b{display:none!important}
+  /* команда */
+  .team-roles div{padding:20px}
+}
+@media (max-width:760px){
+  .number-grid{width:100%!important;max-width:100%!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;overflow:hidden}
+  .number-grid article{min-width:0!important;padding:22px 8px!important}
+  .number-grid article span{font-size:10px!important;letter-spacing:.08em!important}
+  .number-grid article p{font-size:13px}
+}
+@media (min-width:1101px){.nav-phone{justify-self:end}}
