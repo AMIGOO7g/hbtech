@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://amigoo7g.github.io/hbtech/sitemap.xml

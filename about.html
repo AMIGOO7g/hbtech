@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#090a0b" />
+    <title>О компании HBTECH</title>
+    <meta
+      name="description"
+      content="Команда, построенные объекты, гарантии, ипотека и контакты HBTECH."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="О компании HBTECH" />
+    <meta property="og:description" content="Команда, построенные объекты, гарантии, ипотека и контакты HBTECH." />
+    <meta property="og:image" content="https://amigoo7g.github.io/hbtech/assets/og-cover.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://amigoo7g.github.io/hbtech/about.html" />
+    <link rel="icon" type="image/svg+xml" href="assets/hbtech-logo.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="experience">
+    <header class="site-nav" id="siteNav">
+      <button
+        class="nav-brand"
+        type="button"
+        data-view="home"
+        aria-label="HBTECH — на главную"
+      >
+        <img src="assets/hbtech-logo.svg" alt="" />
+      </button>
+      <nav class="nav-links" aria-label="Основная навигация">
+        <button type="button" data-view="projects">Проекты</button
+        ><button type="button" data-view="process">Строительство</button
+        ><button type="button" data-view="architecture">Индивидуальный дом</button
+        ><button type="button" data-view="experience">О компании</button>
+      </nav>
+      <a class="nav-phone" id="navPhone" href="#"></a><button class="nav-cta" type="button" data-lead="project">
+        Получить проект</button
+      ><button
+        class="menu-toggle"
+        type="button"
+        aria-label="Открыть меню"
+        aria-expanded="false"
+      >
+        <span></span><span></span>
+      </button>
+    </header>
+    <aside class="menu-drawer" aria-hidden="true">
+      <div class="drawer-brand">HBTECH</div>
+      <nav aria-label="Мобильная навигация">
+        <button type="button" data-view="projects"><b>01</b>Проекты</button
+        ><button type="button" data-view="process"><b>02</b>Строительство</button
+        ><button type="button" data-view="architecture"><b>03</b>Индивидуальный дом</button
+        ><button type="button" data-view="experience"><b>04</b>О компании</button>
+      </nav>
+      <button class="primary" type="button" data-lead="project">
+        Получить проект
+      </button>
+    </aside>
+    <main>
+      <section class="view dark-view active" data-view-panel="experience">
+        <section class="hero experience-hero">
+          <div class="experience-number reveal"><b data-count="5">0</b></div>
+          <div class="hero-copy reveal">
+            <span class="eyebrow">ОПЫТ HBTECH</span>
+            <h1>О компании.<br /><span class="spectrum">5 лет опыта.</span></h1>
+            <p>От первого эскиза до документов, которые остаются с домом.</p>
+          </div>
+        </section>
+        <section class="proof-numbers section-dark-soft">
+          <header class="section-heading reveal">
+            <span>В ЦИФРАХ</span>
+            <h2>Опыт, который<br />можно проверить.</h2>
+          </header>
+          <div class="number-grid" id="numberGrid"></div>
+        </section>
+        <section class="built-objects section-dark">
+          <header class="section-heading reveal">
+            <span>ПОСТРОЕННЫЕ ОБЪЕКТЫ</span>
+            <h2>Проект продолжается<br />на площадке.</h2>
+          </header>
+          <div class="object-grid" id="objectGrid"></div>
+        </section>
+        <section class="team-section section-dark-soft">
+          <header class="section-heading reveal"><span>КОМАНДА</span><h2>Люди, которые<br />отвечают за дом.</h2></header>
+          <div class="team reveal">
+            <figure class="leader"><div class="ph-portrait" aria-hidden="true">АМ</div><figcaption><blockquote>«Мы не продаём квадратные метры. Мы отвечаем за дом, в котором семья будет жить десятилетиями.»</blockquote><b>Алексей Морозов</b><span>Основатель HBTECH · фото и имя — заглушка</span></figcaption></figure>
+            <div class="team-roles" id="teamRoles"></div>
+          </div>
+        </section>
+        <section class="quality-section section-dark">
+          <header class="section-heading reveal"><span>КОНТРОЛЬ КАЧЕСТВА</span><h2>Видно каждый<br />этап стройки.</h2></header>
+          <div class="quality-grid" id="qualityGrid"></div>
+        </section>
+        <section class="reviews section-dark-soft">
+          <header class="section-heading reveal">
+            <span>ОТЗЫВЫ</span>
+            <h2>Что пишут<br />о нас.</h2>
+          </header>
+          <div class="review-grid" id="reviewGrid"></div>
+        </section>
+        <section class="trust-section section-dark">
+          <header class="section-heading reveal">
+            <span>ГАРАНТИИ И ДОКУМЕНТЫ</span>
+            <h2>Ответственность<br />не заканчивается ключами.</h2>
+          </header>
+          <div class="trust-grid" id="trustGrid"></div>
+          <div class="partner-title">С КЕМ СОТРУДНИЧАЕМ</div>
+          <div class="partner-line" id="partnerLine"></div>
+        </section>
+        <section class="mortgage-section section-dark-soft">
+          <div class="mortgage reveal">
+            <div><span class="eyebrow">ИПОТЕКА</span><h2>Дом в ипотеку<br />без лишних визитов.</h2><p>Аккредитованы в банках-партнёрах: подберём программу, соберём документы и сопроводим сделку.</p><div class="mort-programs" id="mortPrograms"></div><button class="primary" type="button" data-lead="mortgage">Подобрать ипотеку</button></div>
+            <div class="banks" id="bankList"></div>
+          </div>
+        </section>
+        <section class="office-section section-dark">
+          <div class="office reveal">
+            <div class="office-map" aria-hidden="true"><svg viewBox="0 0 400 260"><path d="M0 70h400M0 180h400M90 0v260M250 0v260M0 240l400-150M160 0l60 260" /><circle cx="250" cy="130" r="9"/><circle cx="250" cy="130" r="22" class="pulse"/></svg></div>
+            <div><span class="eyebrow">ОФИС И ЭКСКУРСИЯ</span><h2>Приезжайте<br />посмотреть вживую.</h2><p id="officeAddr"></p><p>Покажем образцы материалов и отвезём на объект, который строится прямо сейчас.</p><button class="primary" type="button" data-lead="consult">Записаться на экскурсию</button></div>
+          </div>
+        </section>
+        <section class="faq-company section-dark-soft">
+          <header class="section-heading reveal"><span>ВОПРОСЫ</span><h2>Коротко<br />о главном.</h2></header>
+          <div class="faq-list" id="companyFaq"></div>
+        </section>
+        <div data-footer="experience"></div>
+      </section>
+    </main>
+    <div class="msg-fab" id="msgFab">
+      <div class="msg-list" id="msgList"></div>
+      <button type="button" class="msg-toggle" id="msgToggle" aria-label="Написать нам" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg></button>
+    </div>
+
+    
+    <div class="compare-dock" id="compareDock">
+      <div class="compare-slots" id="compareSlots"></div>
+      <button class="primary" type="button" id="openCompare">Сравнить</button>
+      <button class="dock-hide" type="button" id="dockHide" aria-label="Скрыть панель сравнения">×</button>
+      <button class="dock-mini" type="button" id="dockMini"></button>
+    </div>
+    <div class="sheet" id="detailSheet" aria-hidden="true">
+      <div class="sheet-panel">
+        <button class="round-close" type="button" data-close-sheet>×</button
+        ><span class="eyebrow" id="sheetEyebrow"></span>
+        <h2 id="sheetTitle"></h2>
+        <p class="sheet-lead" id="sheetText"></p>
+        <div class="sheet-points" id="sheetPoints"></div>
+      </div>
+    </div>
+    <div class="sheet" id="leadSheet" aria-hidden="true">
+      <div class="sheet-panel lead-panel">
+        <button class="round-close" type="button" data-close-lead>×</button
+        ><span class="eyebrow" id="leadEyebrow">НАЧАТЬ РАЗГОВОР</span>
+        <h2 id="leadTitle">Получить проект</h2>
+        <p class="sheet-lead" id="leadText"></p>
+        <div class="lead-project-picker" id="leadProjectPicker"></div>
+        <div class="lead-packages" id="leadPackages" hidden></div>
+        <form id="leadForm">
+          <input name="name" placeholder="Имя *" required autocomplete="name" />
+          <input name="phone" type="tel" placeholder="Телефон *" required autocomplete="tel" />
+          <div class="msg-choice-wrap"><span id="msgChoiceLabel">Куда прислать ответ</span>
+            <div class="seg msg-choice" id="msgChoice"><button type="button" data-v="WhatsApp" class="on">WhatsApp</button><button type="button" data-v="Telegram">Telegram</button><button type="button" data-v="MAX">MAX</button></div>
+            <input type="hidden" name="messenger" value="WhatsApp" />
+          </div>
+          <input name="email" type="email" placeholder="Email (необязательно)" autocomplete="email" />
+          <textarea name="task" rows="3" placeholder="Что важно учесть"></textarea>
+          <label class="consent"><input type="checkbox" name="privacy" required /> Согласен на обработку персональных данных в соответствии с <a href="#" id="privacyLink">политикой конфиденциальности</a></label>
+          <button class="primary" type="submit">Отправить запрос</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <h3>Запрос отправлен.</h3>
+          <p id="successText">Свяжемся выбранным способом.</p>
+          <a id="leadDownload" href="#" target="_blank" rel="noopener"
+            >Открыть PDF</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="sheet compare-sheet" id="compareSheet" aria-hidden="true">
+      <div class="sheet-panel">
+        <button class="round-close" type="button" data-close-compare>×</button
+        ><span class="eyebrow">СРАВНЕНИЕ ПРОЕКТОВ</span>
+        <div class="compare-top"><h2>Сравните до трёх домов.</h2><label class="diff-toggle"><input type="checkbox" id="diffOnly" /><i></i>Только различия</label></div>
+        <div class="compare-picker" id="comparePicker" hidden></div>
+        <div class="compare-grid" id="compareTable"></div>
+      </div>
+    </div>
+    <div class="viewer" id="gallerySheet" aria-hidden="true">
+      <div class="viewer-bg" id="viewerBg"></div>
+      <div class="viewer-stage" id="viewerStage"></div>
+      <button class="viewer-close" type="button" data-close-gallery aria-label="Закрыть">×</button>
+      <button class="viewer-nav prev gallery-nav" type="button" aria-label="Предыдущее изображение">←︎</button>
+      <button class="viewer-nav next gallery-nav" type="button" aria-label="Следующее изображение">→︎</button>
+      <div class="viewer-bar">
+        <div class="viewer-cap"><span id="galleryPlace"></span><h2 id="galleryTitle"></h2></div>
+        <div class="viewer-thumbs" id="viewerThumbs"></div>
+        <div class="viewer-act"><b id="galleryIndex"></b><button class="pill-link" type="button" id="galleryLink" hidden>Открыть проект <i>↗︎</i></button></div>
+      </div>
+      <div class="viewer-progress"><i id="viewerProg"></i></div>
+    </div>
+    <script src="data/content.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,9 +1,16 @@
 (() => {
+  const _ioObs = IntersectionObserver.prototype.observe;
+  IntersectionObserver.prototype.observe = function (el) { if (el instanceof Element) _ioObs.call(this, el); };
   const SS = (src, sizes = "(max-width:760px) 92vw, 40vw") =>
     /\.webp$/.test(src) && !/-sm\.webp$/.test(src) ? `srcset="${src.replace(/\.webp$/, "-sm.webp")} 800w, ${src} 1600w" sizes="${sizes}"` : "";
   const D = window.HBTECH_DATA,
-    qs = (s, r = document) => r.querySelector(s),
-    qsa = (s, r = document) => [...r.querySelectorAll(s)],
+    NOEL = new Proxy(function () {}, {
+      get: (t, k) => (k === "length" ? 0 : k === Symbol.iterator ? [][Symbol.iterator] : k === Symbol.toPrimitive ? () => "" : NOEL),
+      set: () => true,
+      apply: () => NOEL,
+    }),
+    qs = (s, r = document) => (r && r !== NOEL && r.querySelector(s)) || NOEL,
+    qsa = (s, r = document) => (r && r !== NOEL ? [...r.querySelectorAll(s)] : []),
     esc = (s) =>
       String(s).replace(
         /[&<>'"]/g,
@@ -50,8 +57,14 @@
     const panel = qs(`[data-view-panel="${activeView}"]`);
     nav.classList.toggle("light-tone", panel?.classList.contains("light-view"));
   }
+  const PAGES = { home: "index.html", projects: "projects.html", process: "build.html", architecture: "custom.html", technology: "tech.html", materials: "materials.html", experience: "about.html", calc: "calc.html" };
+  const PAGE = document.body.dataset.page || "home";
+  const projectUrl = (name) => `project-${(D.projects[name] || {}).slug}.html`;
   function openView(name, push = true) {
-    if (!qs(`[data-view-panel="${name}"]`)) return;
+    if (!document.querySelector(`[data-view-panel="${name}"]`)) {
+      if (PAGES[name]) location.href = PAGES[name];
+      return;
+    }
     activeView = name;
     qsa(".view").forEach((v) =>
       v.classList.toggle("active", v.dataset.viewPanel === name),
@@ -75,7 +88,6 @@
       centerHorizontalTracks(qs(`[data-view-panel="${name}"]`)),
     );
     updateCompareDock();
-    if (push) history.replaceState(null, "", "#" + name);
   }
   document.addEventListener("click", (e) => {
     const view = e.target.closest("[data-view]");
@@ -450,7 +462,7 @@
           qs("#stageLabel").textContent = s.title;
         }
       }),
-    { root: qs('[data-view-panel="process"]'), rootMargin: "-48% 0px -48% 0px", threshold: 0 },
+    { root: document.querySelector('[data-view-panel="process"]'), rootMargin: "-48% 0px -48% 0px", threshold: 0 },
   );
   qsa(".process-step").forEach((x) => stageObserver.observe(x));
 
@@ -520,10 +532,17 @@
     }, 55);
   }
   function openProject(name) {
+    if (PAGE !== "project" || document.body.dataset.project !== name) {
+      location.href = projectUrl(name);
+      return;
+    }
+    renderProject(name);
+  }
+  function renderProject(name) {
     const p = D.projects[name];
     if (!p) return;
     currentProject = name;
-    openView("projects", false);
+    if (PAGE !== "project") openView("projects", false);
     projectDetail.classList.add("open");
     projectDetail.setAttribute("aria-hidden", "false");
     projectScroll.scrollTop = 0;
@@ -604,13 +623,9 @@
     qs("#pdBuy").onclick = () => openLead("buy", name);
     qs("#pdCompare").onclick = () => toggleCompare(name);
     updateCompareButtons();
-    history.replaceState(null, "", "#project-" + p.slug);
   }
   qs("#projectClose").onclick = () => {
-    projectDetail.classList.remove("open");
-    projectDetail.setAttribute("aria-hidden", "true");
-    history.replaceState(null, "", "#projects");
-    updateCompareDock();
+    location.href = "projects.html";
   };
 
   let compare = (() => {
@@ -937,7 +952,7 @@
           io.unobserve(el);
         }),
       {
-        root: root?.classList?.contains("view") ? root : null,
+        root: root instanceof Element && root.classList.contains("view") ? root : null,
         threshold: 0.55,
       },
     );
@@ -955,7 +970,7 @@
             }
           }),
         {
-          root: root?.classList?.contains("view") ? root : null,
+          root: root instanceof Element && root.classList.contains("view") ? root : null,
           threshold: 0.12,
         },
       );
@@ -986,14 +1001,14 @@
     else if (compareSheet.classList.contains("open")) closeSheet(compareSheet);
     else if (leadSheet.classList.contains("open")) closeSheet(leadSheet);
     else if (detailSheet.classList.contains("open")) closeSheet(detailSheet);
-    else if (projectDetail.classList.contains("open"))
-      qs("#projectClose").click();
-    else openView("home");
+    else if (false) {}
   });
   const hash = location.hash.slice(1),
     projectHash = projectEntries.find(([, p]) => "project-" + p.slug === hash);
-  if (projectHash) openProject(projectHash[0]);
-  else openView(qs(`[data-view-panel="${hash}"]`) ? hash : "home", false);
+  if (projectHash && PAGE !== "project") location.replace(projectUrl(projectHash[0]));
+  else if (hash && PAGES[hash] && hash !== PAGE && PAGE === "home") location.replace(PAGES[hash]);
+  if (PAGE === "project") renderProject(document.body.dataset.project);
+  else openView(PAGE, false);
   updateCompareButtons();
   observeReveals(qs(".view.active"));
   const np = qs("#navPhone");
@@ -1093,7 +1108,7 @@
     setTimeout(() => qs(".mortgage-section").scrollIntoView({ behavior: "smooth", block: "start" }), 500);
   });
   const homeView = qs(".home-view");
-  if (location.hash.startsWith("#project-")) homeView.classList.remove("intro");
+  if (location.hash) homeView.classList.remove("intro");
   else setTimeout(() => homeView.classList.remove("intro"), 6600);
   observeCounters(qs(".view.active"));
 })();

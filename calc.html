@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#090a0b" />
+    <title>Калькулятор стоимости строительства дома | HBTECH</title>
+    <meta
+      name="description"
+      content="Рассчитайте вилку стоимости строительства за минуту и получите точную смету."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Калькулятор стоимости строительства дома | HBTECH" />
+    <meta property="og:description" content="Рассчитайте вилку стоимости строительства за минуту и получите точную смету." />
+    <meta property="og:image" content="https://amigoo7g.github.io/hbtech/assets/og-cover.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://amigoo7g.github.io/hbtech/calc.html" />
+    <link rel="icon" type="image/svg+xml" href="assets/hbtech-logo.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="calc">
+    <header class="site-nav" id="siteNav">
+      <button
+        class="nav-brand"
+        type="button"
+        data-view="home"
+        aria-label="HBTECH — на главную"
+      >
+        <img src="assets/hbtech-logo.svg" alt="" />
+      </button>
+      <nav class="nav-links" aria-label="Основная навигация">
+        <button type="button" data-view="projects">Проекты</button
+        ><button type="button" data-view="process">Строительство</button
+        ><button type="button" data-view="architecture">Индивидуальный дом</button
+        ><button type="button" data-view="experience">О компании</button>
+      </nav>
+      <a class="nav-phone" id="navPhone" href="#"></a><button class="nav-cta" type="button" data-lead="project">
+        Получить проект</button
+      ><button
+        class="menu-toggle"
+        type="button"
+        aria-label="Открыть меню"
+        aria-expanded="false"
+      >
+        <span></span><span></span>
+      </button>
+    </header>
+    <aside class="menu-drawer" aria-hidden="true">
+      <div class="drawer-brand">HBTECH</div>
+      <nav aria-label="Мобильная навигация">
+        <button type="button" data-view="projects"><b>01</b>Проекты</button
+        ><button type="button" data-view="process"><b>02</b>Строительство</button
+        ><button type="button" data-view="architecture"><b>03</b>Индивидуальный дом</button
+        ><button type="button" data-view="experience"><b>04</b>О компании</button>
+      </nav>
+      <button class="primary" type="button" data-lead="project">
+        Получить проект
+      </button>
+    </aside>
+    <main>
+      <section class="view dark-view active" data-view-panel="calc">
+        <section class="calc-section section-dark">
+          <button type="button" class="back-pill" id="calcBack" hidden>←︎ Вернуться к проекту</button>
+          <header class="section-heading reveal">
+            <span>КАЛЬКУЛЯТОР</span>
+            <h2>Сколько стоит<br />построить дом.</h2>
+          </header>
+          <div class="calc reveal">
+            <div class="calc-form">
+              <div class="calc-row"><div class="calc-label">Площадь дома <output id="calcAreaOut">150 м²</output></div><input type="range" id="calcArea" min="80" max="400" step="5" value="150" /></div>
+              <div class="calc-row"><div class="calc-label">Этажность</div><div class="seg" data-calc="floors"><button type="button" data-v="1">1 этаж</button><button type="button" data-v="m" class="on">1 + мансарда</button><button type="button" data-v="2">2 этажа</button></div></div>
+              <div class="calc-row"><div class="calc-label">Материал стен</div><div class="seg" data-calc="mat"><button type="button" data-v="gas" class="on">Газобетон</button><button type="button" data-v="cer">Керамический блок</button><button type="button" data-v="brick">Кирпич</button></div></div>
+              <div class="calc-row"><div class="calc-label">Комплектация</div><div class="seg" data-calc="pack"><button type="button" data-v="box">Коробка</button><button type="button" data-v="warm" class="on">Тёплый контур</button><button type="button" data-v="key">Под ключ</button></div></div>
+            </div>
+            <div class="calc-result">
+              <span>Ориентировочная стоимость</span>
+              <b id="calcRange"></b>
+              <p id="calcPer"></p>
+              <p class="calc-inc" id="calcInc"></p>
+              <p class="calc-mort"><span id="calcMort"></span> <button type="button" class="link-btn" data-goto-mortgage>Об ипотеке →︎</button></p>
+              <button class="primary" type="button" data-lead="build">Получить точную смету</button>
+              <small>Точная смета бесплатно за 1–3 рабочих дня. Цены на сайте условные.</small>
+            </div>
+          </div>
+        </section>
+        <div data-footer="calc"></div>
+      </section>
+    </main>
+    <div class="msg-fab" id="msgFab">
+      <div class="msg-list" id="msgList"></div>
+      <button type="button" class="msg-toggle" id="msgToggle" aria-label="Написать нам" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg></button>
+    </div>
+
+    
+    <div class="compare-dock" id="compareDock">
+      <div class="compare-slots" id="compareSlots"></div>
+      <button class="primary" type="button" id="openCompare">Сравнить</button>
+      <button class="dock-hide" type="button" id="dockHide" aria-label="Скрыть панель сравнения">×</button>
+      <button class="dock-mini" type="button" id="dockMini"></button>
+    </div>
+    <div class="sheet" id="detailSheet" aria-hidden="true">
+      <div class="sheet-panel">
+        <button class="round-close" type="button" data-close-sheet>×</button
+        ><span class="eyebrow" id="sheetEyebrow"></span>
+        <h2 id="sheetTitle"></h2>
+        <p class="sheet-lead" id="sheetText"></p>
+        <div class="sheet-points" id="sheetPoints"></div>
+      </div>
+    </div>
+    <div class="sheet" id="leadSheet" aria-hidden="true">
+      <div class="sheet-panel lead-panel">
+        <button class="round-close" type="button" data-close-lead>×</button
+        ><span class="eyebrow" id="leadEyebrow">НАЧАТЬ РАЗГОВОР</span>
+        <h2 id="leadTitle">Получить проект</h2>
+        <p class="sheet-lead" id="leadText"></p>
+        <div class="lead-project-picker" id="leadProjectPicker"></div>
+        <div class="lead-packages" id="leadPackages" hidden></div>
+        <form id="leadForm">
+          <input name="name" placeholder="Имя *" required autocomplete="name" />
+          <input name="phone" type="tel" placeholder="Телефон *" required autocomplete="tel" />
+          <div class="msg-choice-wrap"><span id="msgChoiceLabel">Куда прислать ответ</span>
+            <div class="seg msg-choice" id="msgChoice"><button type="button" data-v="WhatsApp" class="on">WhatsApp</button><button type="button" data-v="Telegram">Telegram</button><button type="button" data-v="MAX">MAX</button></div>
+            <input type="hidden" name="messenger" value="WhatsApp" />
+          </div>
+          <input name="email" type="email" placeholder="Email (необязательно)" autocomplete="email" />
+          <textarea name="task" rows="3" placeholder="Что важно учесть"></textarea>
+          <label class="consent"><input type="checkbox" name="privacy" required /> Согласен на обработку персональных данных в соответствии с <a href="#" id="privacyLink">политикой конфиденциальности</a></label>
+          <button class="primary" type="submit">Отправить запрос</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <h3>Запрос отправлен.</h3>
+          <p id="successText">Свяжемся выбранным способом.</p>
+          <a id="leadDownload" href="#" target="_blank" rel="noopener"
+            >Открыть PDF</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="sheet compare-sheet" id="compareSheet" aria-hidden="true">
+      <div class="sheet-panel">
+        <button class="round-close" type="button" data-close-compare>×</button
+        ><span class="eyebrow">СРАВНЕНИЕ ПРОЕКТОВ</span>
+        <div class="compare-top"><h2>Сравните до трёх домов.</h2><label class="diff-toggle"><input type="checkbox" id="diffOnly" /><i></i>Только различия</label></div>
+        <div class="compare-picker" id="comparePicker" hidden></div>
+        <div class="compare-grid" id="compareTable"></div>
+      </div>
+    </div>
+    <div class="viewer" id="gallerySheet" aria-hidden="true">
+      <div class="viewer-bg" id="viewerBg"></div>
+      <div class="viewer-stage" id="viewerStage"></div>
+      <button class="viewer-close" type="button" data-close-gallery aria-label="Закрыть">×</button>
+      <button class="viewer-nav prev gallery-nav" type="button" aria-label="Предыдущее изображение">←︎</button>
+      <button class="viewer-nav next gallery-nav" type="button" aria-label="Следующее изображение">→︎</button>
+      <div class="viewer-bar">
+        <div class="viewer-cap"><span id="galleryPlace"></span><h2 id="galleryTitle"></h2></div>
+        <div class="viewer-thumbs" id="viewerThumbs"></div>
+        <div class="viewer-act"><b id="galleryIndex"></b><button class="pill-link" type="button" id="galleryLink" hidden>Открыть проект <i>↗︎</i></button></div>
+      </div>
+      <div class="viewer-progress"><i id="viewerProg"></i></div>
+    </div>
+    <script src="data/content.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
