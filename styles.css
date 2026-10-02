@@ -4372,3 +4372,14 @@ html,body,button{font-variant-emoji:text}
   .gallery-grid figure:nth-child(2),.gallery-grid figure:nth-child(3){aspect-ratio:4/3}
   .pd-eyebrow{font-size:10px;margin-bottom:10px}
 }
+/* Кнопки проекта под фото */
+.pd-hero-actions{position:relative;display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:26px 0 10px}
+/* Рабочий проект гаснет, когда наведена другая колонка */
+.pkg-compare[data-hover="0"] .pkg-buy [data-c="1"] button,.pkg-compare[data-hover="2"] .pkg-buy [data-c="1"] button{background:transparent!important;border:1px solid rgba(255,255,255,.5)!important;color:#fff!important}
+.pkg-compare[data-hover="0"] .pkg-head [data-c="1"] strong,.pkg-compare[data-hover="2"] .pkg-head [data-c="1"] strong{color:#fff}
+.cg-pick{display:flex;flex-direction:column;gap:6px;max-height:300px;overflow-y:auto;scrollbar-width:none;padding:10px;border-radius:14px;border:1px dashed var(--line-strong)}
+.cg-pick::-webkit-scrollbar{display:none}
+.cg-pick>span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.cg-pick button{display:flex;align-items:center;gap:10px;padding:6px;border-radius:10px;border:1px solid transparent;background:var(--surface);color:#fff;font-size:14px;cursor:pointer;text-align:left;transition:border-color .3s,background .3s}
+.cg-pick button:hover{border-color:var(--plum2);background:rgba(150,59,114,.18)}
+.cg-pick img{width:48px;height:34px;object-fit:cover;border-radius:6px}

@@ -669,6 +669,7 @@
     compareSheet.classList.add("open");
     compareSheet.setAttribute("aria-hidden", "false");
   }
+  let compareAddOpen = false;
   function renderCompare() {
     qs("#comparePicker").innerHTML = projectEntries
       .map(([n]) => `<button type="button" data-pick-compare="${n}" class="${compare.includes(n) ? "active" : ""}">${compare.includes(n) ? "✓ " : "+ "}${n}</button>`)
@@ -683,18 +684,20 @@
     const diff = qs("#diffOnly").checked;
     const n = cols.length, empty = n < 3;
     const tpl = `--n:${n + (empty ? 1 : 0)};grid-template-columns: minmax(150px,1fr) repeat(${n + (empty ? 1 : 0)}, minmax(0,1.4fr))`;
-    const head = `<div class="cg-row cg-head" style="${tpl}"><span></span>${cols.map((c) => `<div class="cg-card"><img src="${D.projects[c].images[0]}" ${SS(D.projects[c].images[0], "300px")} alt="Проект ${c}"><b>${c}</b><em>${D.projects[c].projectPrice}</em><span><button type="button" data-open-project="${c}">Открыть ↗︎</button><button type="button" data-remove-compare="${c}">Убрать</button></span></div>`).join("")}${empty ? `<button type="button" class="cg-add" id="cgAdd"><i>+</i>Добавить проект</button>` : ""}</div>`;
+    const head = `<div class="cg-row cg-head" style="${tpl}"><span></span>${cols.map((c) => `<div class="cg-card"><img src="${D.projects[c].images[0]}" ${SS(D.projects[c].images[0], "300px")} alt="Проект ${c}"><b>${c}</b><em>${D.projects[c].projectPrice}</em><span><button type="button" data-open-project="${c}">Открыть ↗︎</button><button type="button" data-remove-compare="${c}">Убрать</button></span></div>`).join("")}${empty ? (compareAddOpen ? `<div class="cg-pick"><span>Выберите проект</span>${projectEntries.filter(([x]) => !cols.includes(x)).map(([x, pp]) => `<button type="button" data-pick-compare="${x}"><img src="${pp.images[0].replace(/\.webp$/, "-sm.webp")}" alt="">${x}</button>`).join("")}</div>` : `<button type="button" class="cg-add" id="cgAdd"><i>+</i>Добавить проект</button>`) : ""}</div>`;
     const body = groups.map(([g, rows]) => {
       const rr = rows.filter(([, k]) => !diff || n < 2 || new Set(cols.map((c) => val(c, k))).size > 1);
       if (!rr.length) return "";
       return `<div class="cg-group">${g}</div>` + rr.map(([l, k]) => `<div class="cg-row" style="${tpl}"><span>${l}</span>${cols.map((c) => `<div>${val(c, k)}</div>`).join("")}${empty ? "<div></div>" : ""}</div>`).join("");
     }).join("");
     qs("#compareTable").innerHTML = n ? head + body : `<div class="cg-empty">Добавьте проекты, чтобы сравнить их.<button type="button" class="cg-add" id="cgAdd"><i>+</i>Добавить проект</button></div>`;
-    qs("#comparePicker").hidden = n > 0 && !qs("#comparePicker").dataset.show;
+    qs("#comparePicker").hidden = true;
   }
   qs("#diffOnly").onchange = renderCompare;
   qs("#compareTable").addEventListener("click", (e) => {
-    if (e.target.closest("#cgAdd")) { const p = qs("#comparePicker"); p.dataset.show = "1"; p.hidden = false; p.scrollIntoView({ behavior: "smooth", block: "nearest" }); }
+    if (e.target.closest("#cgAdd")) { compareAddOpen = true; renderCompare(); return; }
+    const pick = e.target.closest("[data-pick-compare]");
+    if (pick) { compareAddOpen = false; const src = qs(`#comparePicker [data-pick-compare="${pick.dataset.pickCompare}"]`); if (src) src.click(); else renderCompare(); return; }
     const o = e.target.closest("[data-open-project]");
     if (o) { closeSheet(compareSheet); openProject(o.dataset.openProject); }
   });

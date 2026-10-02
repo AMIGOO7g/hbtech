@@ -60,6 +60,9 @@ window.HBTECH_DATA = {
         "assets/projects/sad/hero.webp",
         "assets/projects/sad/view-2.webp",
         "assets/projects/sad/facade.webp",
+        "assets/projects/sad/facade-2.webp",
+        "assets/projects/sad/facade-3.webp",
+        "assets/projects/sad/facade-4.webp",
       ],
       plans: [
         "assets/projects/sad/plan-1.webp",
